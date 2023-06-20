@@ -1,12 +1,16 @@
 import requests
 import config
+import base64
+
 
 BASE_URL = "https://api.fluent.walchem.com/"
-API_KEY = config.API_KEY
+api_key = config.API_KEY
+API_KEY = base64.b64encode(api_key.encode("utf-8")).decode("utf-8")
 HEADERS = {
-  f'Authorization': API_KEY,
-  'Accept': '*/*'
+  'accept': '*/*',
+  'authorization': 'Basic bWhlbHRtYW5AYWxkZXJhdXRvbWF0aW9uLmNhOmE1ODhjMDAwLWZjNWYtNGNmNy1iNDYxLTM5OWQ3ZjAyMGQ3Mw=='
 }
+
 
 class Fluent_Data:
     def __init__(self) -> None:
@@ -19,24 +23,20 @@ class Fluent_Data:
 
 
 def main():
-    FAPI = Fluent_Data()
-    FAPI.list_devices()
-    response = requests.request("GET", "https://api.fluent.walchem.com/controller/list/", headers=HEADERS)
+    # FAPI = Fluent_Data()
+    # FAPI.list_devices()
+    try:
+        response = requests.get(BASE_URL + "controller/list", headers=HEADERS)
+        response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
 
-    print(response)
-    print(response.text)
-    print(FAPI.url)
+        print(response.status_code)
+        print(response.json())
 
+    except requests.exceptions.RequestException as e:
+        print("Error occurred during the request:", e)
 
-
+    except ValueError as e:
+        print("Error occurred while parsing the response:", e)
 
 if __name__=="__main__":
     main()
-    # type_of_req = "controller/current-readings/"
-    # serial = "1510050448"
-    # url = BASE_URL + type_of_req + serial
-
-
-
-
-
