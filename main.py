@@ -38,24 +38,29 @@ class Fluent_Data:
     def set_reading_obj(self, data) -> list:
         reading_obj_list = []
 
-        readings = data['readings']
-        for r in readings:
-            serial = int(data["serial-number"])
-            for sub in r['subchannel']:
-                ch_name = r['channel-name']
-                ch_num = r['channel-number']
-                ch_type = r['channel-type']
-                sub_type = f"SUB TYPE : {sub['type']}"
-                sub_value = f"SUB TYPE : {sub['value']}"
-                try:
-                    sub_units = f"SUB TYPE : {sub['units']}"
-                except Exception as e:
-                    sub_units = ""
+        if 'error' in data:
+            print(data)
+            
+            return False
+        else:
+            readings = data['readings']
+            for r in readings:
+                serial = int(data["serial-number"])
+                for sub in r['subchannel']:
+                    ch_name = r['channel-name']
+                    ch_num = r['channel-number']
+                    ch_type = r['channel-type']
+                    sub_type = f"SUB TYPE : {sub['type']}"
+                    sub_value = f"SUB TYPE : {sub['value']}"
+                    try:
+                        sub_units = f"SUB TYPE : {sub['units']}"
+                    except Exception as e:
+                        sub_units = ""
 
-                read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
-                reading_obj_list.append(read_obj)
+                    read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
+                    reading_obj_list.append(read_obj)
         
-        return reading_obj_list
+            return reading_obj_list
 
 
     def json_test_file(self) -> json:
@@ -68,11 +73,17 @@ class Fluent_Data:
 
 def main():
     FAPI = Fluent_Data()
-    # FAPI.get_readings(FAPI.get_device('1703140568'))
-    readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
-    
-    for reading in readings_list:
-        print(reading)
+    # FAPI.list_devices()
+
+    # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1606071152"))
+
+    # error_dev = FAPI.get_device("1606071152")
+    # print (error_dev['error'])
+
+    if readings_list != False:
+        for reading in readings_list:
+            print(f"Channel: {reading.ch_num} || Sub Channel Type: {reading.subch_type} || Hardware Name: {reading.hardware_name}")
 
 
 if __name__=="__main__":
