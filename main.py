@@ -46,19 +46,21 @@ class Fluent_Data:
             readings = data['readings']
             for r in readings:
                 serial = int(data["serial-number"])
-                for sub in r['subchannel']:
-                    ch_name = r['channel-name']
-                    ch_num = r['channel-number']
-                    ch_type = r['channel-type']
-                    sub_type = f"SUB TYPE : {sub['type']}"
-                    sub_value = f"SUB TYPE : {sub['value']}"
-                    try:
-                        sub_units = f"SUB TYPE : {sub['units']}"
-                    except Exception as e:
-                        sub_units = ""
+                if 'subchannel' in r:
+                    # TODO need a countering else to handle readings with out subchannels 
+                    for sub in r['subchannel']:
+                        ch_name = r['channel-name']
+                        ch_num = r['channel-number']
+                        ch_type = r['channel-type']
+                        sub_type = sub['type']
+                        sub_value = sub['value']
+                        try:
+                            sub_units = sub['units']
+                        except Exception as e:
+                            sub_units = ""
 
-                    read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
-                    reading_obj_list.append(read_obj)
+                        read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
+                        reading_obj_list.append(read_obj)
         
             return reading_obj_list
 
@@ -76,15 +78,25 @@ def main():
     # FAPI.list_devices()
 
     # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
-    readings_list = FAPI.set_reading_obj(FAPI.get_device("1606071152"))
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
 
     # error_dev = FAPI.get_device("1606071152")
     # print (error_dev['error'])
 
     if readings_list != False:
         for reading in readings_list:
-            print(f"Channel: {reading.ch_num} || Sub Channel Type: {reading.subch_type} || Hardware Name: {reading.hardware_name}")
+            print (reading)
 
 
 if __name__=="__main__":
     main()
+
+
+"""
+1609132084 - no sub channel 
+1606071152 - no reading error - dealt with 
+1703140568 - no sub channel on the R's
+2012140870 - Good but not in my test sql 
+1602254151 - no subchannel
+1705301238 - Good and in test SQL
+"""
