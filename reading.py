@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass(slots=True)
 class Readings:
-    dev_serial: int
+    dev_serial: str
     custom_name: str
     ch_num: str
     ch_type: str
@@ -10,6 +10,7 @@ class Readings:
     data_value: str
     units: str
     hardware_name: str = None
+    installation_id: str = None
 
 
     def __post_init__(self) -> None: 
@@ -39,3 +40,6 @@ class Readings:
                 self.hardware_name = "FlowMaster Rate (D2)"
         elif self.ch_num == "D4":
             self.hardware_name = "Generic (D4)"
+    
+    def set_install_id(self, installation_id) -> None:
+        self.installation_id = installation_id
