@@ -17,6 +17,8 @@ class Fluent_Data:
 
 
     def list_devices(self) -> None: 
+        """Use this to get a list of serial number from the Fluent account"""
+
         type_of_req = "controller/list/"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
@@ -27,6 +29,8 @@ class Fluent_Data:
 
 
     def get_device(self, serial: str) -> json:
+        """Get device readings based on serial number"""
+
         type_of_req = f"controller/current-readings/{serial}"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
@@ -36,6 +40,8 @@ class Fluent_Data:
 
 
     def set_reading_obj(self, data) -> list:
+        """Setup readings dataclasses from Fluent device readings use with get_device function"""
+
         reading_obj_list = []
 
         if 'error' in data:
@@ -66,6 +72,8 @@ class Fluent_Data:
 
 
     def json_test_file(self) -> json:
+        """Testing stuff with json file due to being faster then API"""
+
         with open("./test_data/2012140870.json", "r") as json_file:
             file_data = json.load(json_file)
         
@@ -92,7 +100,8 @@ if __name__=="__main__":
     main()
 
 
-"""
+""" Random serial number issues:
+
 1609132084 - no sub channel 
 1606071152 - no reading error - dealt with 
 1703140568 - no sub channel on the R's

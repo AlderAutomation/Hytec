@@ -1,5 +1,6 @@
 import config 
 import mysql.connector
+import datetime
 
 import reading
 
@@ -14,6 +15,7 @@ class Hysql:
         )
 
         self.my_cursor = self.my_db.cursor()
+        self.received_time = datetime.datetime.now()
 
         
     def device_lookup(self, serial:str) -> None: 
@@ -27,7 +29,7 @@ class Hysql:
 
     def installations_data_add_row(self, dataclass:object) -> None:
         print(dataclass)
-
+        # TODO Write to SQL 
 
 
 
@@ -40,6 +42,8 @@ def main():
 
     hysql.installations_data_add_row(read_obj)
 
+    print(hysql.received_time)
+
 
 if __name__=="__main__":
     main()
@@ -49,9 +53,9 @@ if __name__=="__main__":
 
 
 """
-get dev serial number 
-lookup device to get installation number 
-need a received datetime 
-posted datetime? 
+get dev serial number done
+lookup device to get installation number done 
+TODO need a received datetime and its formatting 
+posted datetime? and its formatting 
 
 """

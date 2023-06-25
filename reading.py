@@ -14,7 +14,6 @@ class Readings:
 
 
     def __post_init__(self) -> None: 
-        
         """create the hardware_name fields by mapping all the numbers to 
         their equivalent current value in the SQL"""
         
@@ -40,6 +39,8 @@ class Readings:
                 self.hardware_name = "FlowMaster Rate (D2)"
         elif self.ch_num == "D4":
             self.hardware_name = "Generic (D4)"
+
     
     def set_install_id(self, installation_id) -> None:
+        """Set the installation ID for the dataclass"""
         self.installation_id = installation_id
