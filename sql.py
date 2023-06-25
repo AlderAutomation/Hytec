@@ -1,6 +1,8 @@
 import config 
 import mysql.connector
 
+import reading
+
 
 class Hysql:
     def __init__(self) -> None:
@@ -24,13 +26,32 @@ class Hysql:
 
 
     def installations_data_add_row(self, dataclass:object) -> None:
-        pass
+        print(dataclass)
+
+
 
 
 def main():
     hysql = Hysql()
-    print(hysql.device_lookup(1609132084))
+    read_obj = reading.Readings('1705301238', 'AquaSoft', 'S11', 'C_Cond', 'Value', '449', 'ppm')
+
+    install_id = hysql.device_lookup(read_obj.dev_serial)
+    read_obj.set_install_id(install_id[0][0])
+
+    hysql.installations_data_add_row(read_obj)
 
 
 if __name__=="__main__":
     main()
+
+
+
+
+
+"""
+get dev serial number 
+lookup device to get installation number 
+need a received datetime 
+posted datetime? 
+
+"""
