@@ -3,6 +3,7 @@ import json
 import datetime
 
 import reading
+from sql import Hysql
 
 
 BASE_URL = "https://api.fluent.walchem.com/"
@@ -87,6 +88,7 @@ class Fluent_Data:
 
 def main():
     FAPI = Fluent_Data()
+    hysql = Hysql()
     # FAPI.list_devices()
 
     # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
@@ -96,8 +98,12 @@ def main():
     # print (error_dev['error'])
 
     if readings_list != False:
+        device = hysql.device_lookup(readings_list[0].dev_serial)
+        installation_id = device[0][0]
+
         for reading in readings_list:
-            print (reading)
+            reading.set_install_id(installation_id)
+            hysql.installations_data_add_row(reading)
 
 
 if __name__=="__main__":
