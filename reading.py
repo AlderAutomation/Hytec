@@ -11,7 +11,7 @@ class Readings:
     units: str
     hardware_name: str = None
     installation_id: str = None
-    receive_datetime: str = None
+    received_datetime: str = None
     posted: str = None
 
 
@@ -48,8 +48,8 @@ class Readings:
         self.installation_id = installation_id
 
 
-    def set_receive_time(self, time) -> None:
-        self.receive_datetime = time
+    def set_received_datetime(self, time) -> None:
+        self.received_datetime = time
 
-    def set_posted_time(self, time) -> None:
+    def set_posted(self, time) -> None:
         self.posted = time 
