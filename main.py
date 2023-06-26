@@ -74,6 +74,16 @@ class Fluent_Data:
                         reading_obj_list.append(read_obj)
         
             return reading_obj_list
+        
+    
+    def list_active_alarms(self, serial: str) -> None:
+        type_of_req = f"controller/active-alarms/{serial}"
+        self.url = BASE_URL + type_of_req
+        response = requests.get(self.url, headers=HEADERS)
+        json_response = response.json()
+
+        return json_response
+
 
 
     def json_test_file(self) -> json:
@@ -103,11 +113,21 @@ def main():
 
         for reading in readings_list:
             reading.set_install_id(installation_id)
-            hysql.installations_data_add_row(reading)
+            if reading.ch_num in ["R1", "R2", "R3", "R4", "R5", "R6"]:
+                print(f'Skipping {reading.ch_num}')
+            else:
+                hysql.installations_data_add_row(reading)
+                print(f'Inserted {reading.hardware_name} into DB')
+
+
+def testing_shit():
+    FAPI = Fluent_Data()
+    print(FAPI.list_active_alarms('1608315810'))
 
 
 if __name__=="__main__":
     main()
+    # testing_shit()
 
 
 """ Random serial number issues:
