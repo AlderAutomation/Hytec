@@ -1,5 +1,6 @@
 import requests
 import json
+import datetime
 
 import reading
 
@@ -66,6 +67,9 @@ class Fluent_Data:
                             sub_units = ""
 
                         read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
+                        received = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        read_obj.set_receive_time(received)
+
                         reading_obj_list.append(read_obj)
         
             return reading_obj_list

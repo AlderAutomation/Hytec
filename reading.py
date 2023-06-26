@@ -11,6 +11,8 @@ class Readings:
     units: str
     hardware_name: str = None
     installation_id: str = None
+    receive_datetime: str = None
+    posted: str = None
 
 
     def __post_init__(self) -> None: 
@@ -44,3 +46,10 @@ class Readings:
     def set_install_id(self, installation_id) -> None:
         """Set the installation ID for the dataclass"""
         self.installation_id = installation_id
+
+
+    def set_receive_time(self, time) -> None:
+        self.receive_datetime = time
+
+    def set_posted_time(self, time) -> None:
+        self.posted = time 

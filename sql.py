@@ -15,7 +15,7 @@ class Hysql:
         )
 
         self.my_cursor = self.my_db.cursor()
-        self.received_time = datetime.datetime.now()
+        self.posted = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         
     def device_lookup(self, serial:str) -> None: 
@@ -30,32 +30,22 @@ class Hysql:
     def installations_data_add_row(self, dataclass:object) -> None:
         print(dataclass)
         # TODO Write to SQL 
+        # TODO include dataclass set_posted_time 
 
 
 
 def main():
     hysql = Hysql()
-    read_obj = reading.Readings('1705301238', 'AquaSoft', 'S11', 'C_Cond', 'Value', '449', 'ppm')
+    # read_obj = reading.Readings('1705301238', 'AquaSoft', 'S11', 'C_Cond', 'Value', '449', 'ppm')
 
-    install_id = hysql.device_lookup(read_obj.dev_serial)
-    read_obj.set_install_id(install_id[0][0])
+    # install_id = hysql.device_lookup(read_obj.dev_serial)
+    # read_obj.set_install_id(install_id[0][0])
 
-    hysql.installations_data_add_row(read_obj)
+    # hysql.installations_data_add_row(read_obj)
 
-    print(hysql.received_time)
+    print(hysql.posted)
 
 
 if __name__=="__main__":
     main()
 
-
-
-
-
-"""
-get dev serial number done
-lookup device to get installation number done 
-TODO need a received datetime and its formatting 
-posted datetime? and its formatting 
-
-"""
