@@ -1,7 +1,14 @@
 from dataclasses import dataclass 
+import logging 
+
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+thelog = logging.getLogger()
+
 
 @dataclass(slots=True)
 class Readings:
+    thelog.debug('The dataclass has been init')
     dev_serial: str
     custom_name: str
     ch_num: str
@@ -41,15 +48,22 @@ class Readings:
                 self.hardware_name = "FlowMaster Rate (D2)"
         elif self.ch_num == "D4":
             self.hardware_name = "Generic (D4)"
+        
+        thelog.debug(f'Dataclass hardware name has been assigning {self.hardware_name} based on {self.ch_num}')
 
     
     def set_install_id(self, installation_id) -> None:
         """Set the installation ID for the dataclass"""
+        thelog.debug(f'Setting the installtion id to {installation_id}')
         self.installation_id = installation_id
 
 
     def set_received_datetime(self, time) -> None:
+        '''set the received_datetime value for sql col'''
+        thelog.debug(f'Setting the received_datetime to {time}')
         self.received_datetime = time
 
     def set_posted(self, time) -> None:
+        '''Set the posted time value for SQL col'''
+        thelog.debug(f'Setting the posted time to {time}')
         self.posted = time 
