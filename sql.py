@@ -1,12 +1,17 @@
 import config 
 import mysql.connector
 import datetime
+import logging
 
 import reading
 
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+thelog = logging.getLogger()
 
 class Hysql:
     def __init__(self) -> None:
+        thelog.debug('Hysql has been init')
         self.my_db = mysql.connector.connect(
             host=config.SQLIP,
             port=config.PORT,
@@ -14,6 +19,7 @@ class Hysql:
             password=config.SQLPWD
         )
 
+        thelog.debug(self.my_db)
         self.my_cursor = self.my_db.cursor()
         self.posted = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -23,6 +29,7 @@ class Hysql:
 
         query = f"SELECT * from myhytec_dotcomdb.oi4h8_installations where device_serial_num = '{serial}';"
         self.my_cursor.execute(query)
+        thelog.debug(f'Looking up device {serial}')
 
         return self.my_cursor.fetchall()
 
@@ -38,19 +45,21 @@ class Hysql:
         placeholders = ', '.join(['%s'] * len(values)) 
 
         query = f"INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders});"
-
+        thelog.debug(f'Inserting data into DB using: {query}')
         self.my_cursor.execute(query, values)
         self.my_db.commit()
         print(self.my_cursor.rowcount, 'records inserted.')
 
 
 def main():
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     hysql = Hysql()
     read_obj = reading.Readings('1705301238', 'AquaSoft', 'S11', 'C_Cond', 'Value', '449', 'ppm')
 
     install_id = hysql.device_lookup(read_obj.dev_serial)
     read_obj.set_install_id(install_id[0][0])
-
+    read_obj.set_received_datetime(now)
+    
     hysql.installations_data_add_row(read_obj)
 
 

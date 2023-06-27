@@ -1,9 +1,16 @@
 import requests
 import json
 import datetime
+import logging
 
 import reading
 from sql import Hysql
+
+
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+thelog = logging.getLogger()
+
 
 
 BASE_URL = "https://api.fluent.walchem.com/"
@@ -15,7 +22,7 @@ HEADERS = {
 
 class Fluent_Data:
     def __init__(self) -> None:
-        self.device_serial = 1510050448
+        thelog.debug('Fluent_Data class init')
 
 
     def list_devices(self) -> None: 
@@ -24,6 +31,7 @@ class Fluent_Data:
         type_of_req = "controller/list/"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
+        thelog.debug(f'Listing device from {self.url} with a response of {response}')
         json_response = response.json()
         pretty_response = json.dumps(json_response, indent=4)
 
@@ -36,6 +44,7 @@ class Fluent_Data:
         type_of_req = f"controller/current-readings/{serial}"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
+        thelog.debug(f'Doing device lookup of {serial} with response of {response}')
         json_response = response.json()
 
         return json_response
@@ -48,6 +57,8 @@ class Fluent_Data:
 
         if 'error' in data:
             print(data)
+            thelog.error(f'The device returned error data from api call. Likely due to being unassigned')
+            thelog.error(data)
             
             return False
         else:
