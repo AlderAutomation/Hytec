@@ -54,7 +54,7 @@ class Readings:
     
     def set_install_id(self, installation_id) -> None:
         """Set the installation ID for the dataclass"""
-        thelog.debug(f'Setting the installtion id to {installation_id}')
+        thelog.debug(f'Setting the installation ID to {installation_id}')
         self.installation_id = installation_id
 
 
