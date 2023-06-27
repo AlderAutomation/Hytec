@@ -32,9 +32,8 @@ class Fluent_Data:
         response = requests.get(self.url, headers=HEADERS)
         thelog.debug(f'Listing device from {self.url} with a response of {response}')
         json_response = response.json()
-        pretty_response = json.dumps(json_response, indent=4)
 
-        print(pretty_response)
+        return json_response
 
 
     def get_device(self, serial: str) -> json:
@@ -107,38 +106,54 @@ class Fluent_Data:
 
 
 def main():
+    start = datetime.datetime.now()
+    thelog.info(f'process starts at {start}')
     FAPI = Fluent_Data()
     hysql = Hysql()
-    # FAPI.list_devices()
 
     # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
-    readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
+    # readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
 
-    # error_dev = FAPI.get_device("1606071152")
-    # print (error_dev['error'])
+    serial_list = FAPI.list_devices()
+    for serial in serial_list['controller-list']:
+        readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
+        write_readings_to_sql(hysql, readings_list)
+    
+    end = datetime.datetime.now()
+    time_took = start - end
+    thelog.info(f'The process ended at: {end}. And took {time_took}.')
+    print(f'process took {time_took}')
 
+
+def write_readings_to_sql(Hysql, readings_list: list) -> None:
     if readings_list != False:
-        device = hysql.device_lookup(readings_list[0].dev_serial)
-        installation_id = device[0][0]
+        device = Hysql.device_lookup(readings_list[0].dev_serial)
+        try:
+            installation_id = device[0][0]
 
-        for reading in readings_list:
-            reading.set_install_id(installation_id)
-            if reading.ch_num in ["R1", "R2", "R3", "R4", "R5", "R6"]:
-                print(f'Skipping {reading.ch_num}')
-            else:
-                hysql.installations_data_add_row(reading)
-                print(f'Inserted {reading.hardware_name} into DB')
+            for reading in readings_list:
+                reading.set_install_id(installation_id)
+                if reading.ch_num in ["R1", "R2", "R3", "R4", "R5", "R6"]:
+                    print(f'Skipping {reading.ch_num}')
+                else:
+                    Hysql.installations_data_add_row(reading)
+                    print(f'Inserted {reading.hardware_name} into DB')
+        except Exception as e:
+            thelog.error(f'This device {readings_list[0].dev_serial} failed with following error {e}')
 
 
 def testing_shit():
     FAPI = Fluent_Data()
-    print(FAPI.list_active_alarms('1608315810'))
+    hysql = Hysql()
+
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
+    write_readings_to_sql(hysql, readings_list)
+
 
 
 if __name__=="__main__":
-    main()
-    # testing_shit()
-
+    # main()
+    testing_shit()
 
 """ Random serial number issues:
 
@@ -149,3 +164,10 @@ if __name__=="__main__":
 1602254151 - no subchannel
 1705301238 - Good and in test SQL
 """
+
+
+# TODO what if there is no device ID or serial when trying to write the data from fluent to SQL? 
+# TODO add a counter for how many no data devices 
+# TODO set loglevel from the config file 
+# TODO add multithreading to make this faster? 
+# TODO get list length for serial list 
