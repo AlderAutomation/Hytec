@@ -35,7 +35,7 @@ class Hysql:
 
 
     def installations_data_add_row(self, dataclass: object) -> None:
-        dataclass.set_posted(self.posted)
+        dataclass.set_received_datetime_or_posted('posted', self.posted)
 
         table_name = "myhytec_dotcomdb.oi4h8_installation_data"
         cols = ['installations_installation_id', 'received_datetime', 'hardware_name', 'custom_name', 'units', 'data_value', 'posted']
@@ -58,7 +58,7 @@ def main():
 
     install_id = hysql.device_lookup(read_obj.dev_serial)
     read_obj.set_install_id(install_id[0][0])
-    read_obj.set_received_datetime(now)
+    read_obj.set_received_datetime_or_posted('received_datetime', now)
     
     hysql.installations_data_add_row(read_obj)
 

@@ -58,12 +58,11 @@ class Readings:
         self.installation_id = installation_id
 
 
-    def set_received_datetime(self, time) -> None:
-        '''set the received_datetime value for sql col'''
-        thelog.debug(f'Setting the received_datetime to {time}')
-        self.received_datetime = time
-
-    def set_posted(self, time) -> None:
-        '''Set the posted time value for SQL col'''
-        thelog.debug(f'Setting the posted time to {time}')
-        self.posted = time 
+    def set_received_datetime_or_posted(self, column: str, time: str) -> None:
+        '''set the received_datetime or posted value for sql col'''
+        if column == "received_datetime":
+            thelog.debug(f'Setting the received_datetime to {time}')
+            self.received_datetime = time
+        elif column == 'posted':
+            thelog.debug(f'Setting the posted time to {time}')
+            self.posted = time 
