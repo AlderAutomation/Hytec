@@ -104,27 +104,6 @@ class Fluent_Data:
         return file_data
 
 
-
-def main():
-    start = datetime.datetime.now()
-    thelog.info(f'process starts at {start}')
-    FAPI = Fluent_Data()
-    hysql = Hysql()
-
-    # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
-
-    serial_list = FAPI.list_devices()
-    for serial in serial_list['controller-list']:
-        readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
-        write_readings_to_sql(hysql, readings_list)
-    
-    end = datetime.datetime.now()
-    time_took = start - end
-    thelog.info(f'The process ended at: {end}. And took {time_took}.')
-    print(f'process took {time_took}')
-
-
 def write_readings_to_sql(Hysql, readings_list: list) -> None:
     if readings_list != False:
         device = Hysql.device_lookup(readings_list[0].dev_serial)
@@ -140,14 +119,48 @@ def write_readings_to_sql(Hysql, readings_list: list) -> None:
                     print(f'Inserted {reading.hardware_name} into DB')
         except Exception as e:
             thelog.error(f'This device {readings_list[0].dev_serial} failed with following error {e}')
+            thelog.error(readings_list[0])
+            thelog.error("likely due to the serial being present in fluent but not in SQL")
+
+
+def log_serial_list_length(serials: list) -> None:
+    thelog.info(f'There are {len(serials)} serials in this run')
+
+
+def main():
+    start = datetime.datetime.now()
+    thelog.info(f'process starts at {start}')
+    FAPI = Fluent_Data()
+    hysql = Hysql()
+
+    # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
+    # readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
+
+    serial_list = FAPI.list_devices()
+    
+    # for serial in serial_list['controller-list']:
+    #     readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
+    #     write_readings_to_sql(hysql, readings_list)
+
+    end = datetime.datetime.now()
+    time_took = end - start
+    thelog.info(f'The process ended at: {end}. And took {time_took}.')
+    print(f'process took {time_took}')
+
 
 
 def testing_shit():
     FAPI = Fluent_Data()
-    hysql = Hysql()
+    # hysql = Hysql()
 
-    readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
-    write_readings_to_sql(hysql, readings_list)
+    serial_list = FAPI.list_devices()
+    log_serial_list_length(serial_list['controller-list'])
+
+    # for serial in serial_list['controller-list']:
+    #     print(serial)
+
+    # readings_list = FAPI.set_reading_obj(FAPI.get_device("2212161125"))
+    # write_readings_to_sql(hysql, readings_list)
 
 
 
