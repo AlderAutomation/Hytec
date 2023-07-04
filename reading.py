@@ -1,9 +1,13 @@
 from dataclasses import dataclass 
 import logging 
 
+import config
+
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+logging.basicConfig(filename="log.log", format = LOG_FORMAT)
 thelog = logging.getLogger()
+thelog.setLevel(config.LOGLEVEL)
+
 
 
 @dataclass(slots=True)

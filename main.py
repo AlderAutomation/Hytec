@@ -3,13 +3,15 @@ import json
 import datetime
 import logging
 
+import config
 import reading
 from sql import Hysql
 
 
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+logging.basicConfig(filename="log.log", format = LOG_FORMAT)
 thelog = logging.getLogger()
+thelog.setLevel(config.LOGLEVEL)
 
 
 BASE_URL = "https://api.fluent.walchem.com/"
@@ -168,19 +170,6 @@ if __name__=="__main__":
     # main()
     testing_shit()
 
-""" Random serial number issues:
 
-1609132084 - no sub channel 
-1606071152 - no reading error - dealt with 
-1703140568 - no sub channel on the R's
-2012140870 - Good but not in my test sql 
-1602254151 - no subchannel
-1705301238 - Good and in test SQL
-"""
-
-
-# TODO what if there is no device ID or serial when trying to write the data from fluent to SQL? 
-# TODO add a counter for how many no data devices 
-# TODO set loglevel from the config file 
 # TODO add multithreading to make this faster? 
-# TODO get list length for serial list 
+ 

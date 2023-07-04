@@ -4,10 +4,14 @@ import datetime
 import logging
 
 import reading
+import config
 
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename="log.log", level=logging.DEBUG, format = LOG_FORMAT)
+logging.basicConfig(filename="log.log", format = LOG_FORMAT)
 thelog = logging.getLogger()
+thelog.setLevel(config.LOGLEVEL)
+
+
 
 class Hysql:
     def __init__(self) -> None:
