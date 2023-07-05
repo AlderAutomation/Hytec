@@ -69,6 +69,7 @@ class Fluent_Data:
                     # TODO need a countering else to handle readings with out subchannels 
                     for sub in r['subchannel']:
                         ch_name = r['channel-name']
+                        ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
                         ch_num = r['channel-number']
                         ch_type = r['channel-type']
                         sub_type = sub['type']
@@ -96,16 +97,6 @@ class Fluent_Data:
         return json_response
 
 
-
-    def json_test_file(self) -> json:
-        """Testing stuff with json file due to being faster then API"""
-
-        with open("./test_data/2012140870.json", "r") as json_file:
-            file_data = json.load(json_file)
-        
-        return file_data
-
-
 def write_readings_to_sql(Hysql, readings_list: list) -> None:
     if readings_list != False:
         device = Hysql.device_lookup(readings_list[0].dev_serial)
@@ -120,9 +111,7 @@ def write_readings_to_sql(Hysql, readings_list: list) -> None:
                     Hysql.installations_data_add_row(reading)
                     print(f'Inserted {reading.hardware_name} into DB')
         except Exception as e:
-            thelog.error(f'LOG_ERROR This device {readings_list[0].dev_serial} failed with following error {e}')
-            thelog.error(f'LOG_ERROR {readings_list[0]}')
-            thelog.error('LOG_ERROR likely due to the serial being present in fluent but not in SQL')
+            thelog.error(f'LOG_ERROR This device {readings_list[0].dev_serial} failed with following error {e} \n {readings_list[0]}')
 
 
 def log_serial_list_length(serials: list) -> None:
@@ -135,14 +124,12 @@ def main():
     FAPI = Fluent_Data()
     hysql = Hysql()
 
-    # readings_list = FAPI.set_reading_obj(FAPI.json_test_file())
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device("1705301238"))
-
     serial_list = FAPI.list_devices()
-    
-    # for serial in serial_list['controller-list']:
-    #     readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
-    #     write_readings_to_sql(hysql, readings_list)
+    log_serial_list_length(serial_list)
+
+    for serial in serial_list['controller-list']:
+        readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
+        write_readings_to_sql(hysql, readings_list)
 
     end = datetime.datetime.now()
     time_took = end - start
@@ -150,20 +137,23 @@ def main():
     print(f'APP_TIMERS process took {time_took}')
 
 
-
 def testing_shit():
     FAPI = Fluent_Data()
-    # hysql = Hysql()
+    hysql = Hysql()
 
-    serial_list = FAPI.list_devices()
-    log_serial_list_length(serial_list['controller-list'])
+    'For doing list of serials'
+    # serial_list = FAPI.list_devices()
+    # log_serial_list_length(serial_list['controller-list'])
 
     # for serial in serial_list['controller-list']:
     #     print(serial)
 
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device("2212161125"))
-    # write_readings_to_sql(hysql, readings_list)
+    'Reading single serial number'
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("2106150624"))
+    write_readings_to_sql(hysql, readings_list)
 
+    # for reading in readings_list:
+    #     print(reading)
 
 
 if __name__=="__main__":
