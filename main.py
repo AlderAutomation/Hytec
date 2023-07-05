@@ -32,7 +32,7 @@ class Fluent_Data:
         type_of_req = "controller/list/"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
-        thelog.debug(f'Listing device from {self.url} with a response of {response}')
+        thelog.debug(f'API_RESPONSE Listing device from {self.url} with a response of {response}')
         json_response = response.json()
 
         return json_response
@@ -44,7 +44,7 @@ class Fluent_Data:
         type_of_req = f"controller/current-readings/{serial}"
         self.url = BASE_URL + type_of_req
         response = requests.get(self.url, headers=HEADERS)
-        thelog.debug(f'Doing device lookup of {serial} with response of {response}')
+        thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of {response}')
         json_response = response.json()
 
         return json_response
@@ -57,7 +57,7 @@ class Fluent_Data:
 
         if 'error' in data:
             print(data)
-            thelog.error(f'The device returned error data from api call. Likely due to being unassigned')
+            thelog.error(f'DEV_UNASSIGNED The device returned error data from api call. Likely due to being unassigned')
             thelog.error(data)
             
             return False
@@ -120,18 +120,18 @@ def write_readings_to_sql(Hysql, readings_list: list) -> None:
                     Hysql.installations_data_add_row(reading)
                     print(f'Inserted {reading.hardware_name} into DB')
         except Exception as e:
-            thelog.error(f'This device {readings_list[0].dev_serial} failed with following error {e}')
-            thelog.error(readings_list[0])
-            thelog.error("likely due to the serial being present in fluent but not in SQL")
+            thelog.error(f'LOG_ERROR This device {readings_list[0].dev_serial} failed with following error {e}')
+            thelog.error(f'LOG_ERROR {readings_list[0]}')
+            thelog.error('LOG_ERROR likely due to the serial being present in fluent but not in SQL')
 
 
 def log_serial_list_length(serials: list) -> None:
-    thelog.info(f'There are {len(serials)} serials in this run')
+    thelog.info(f'DEV_SERIAL_COUNT There are {len(serials)} serials in this run')
 
 
 def main():
     start = datetime.datetime.now()
-    thelog.info(f'process starts at {start}')
+    thelog.info(f'APP_TIMERS process starts at {start}')
     FAPI = Fluent_Data()
     hysql = Hysql()
 
@@ -146,8 +146,8 @@ def main():
 
     end = datetime.datetime.now()
     time_took = end - start
-    thelog.info(f'The process ended at: {end}. And took {time_took}.')
-    print(f'process took {time_took}')
+    thelog.info(f'APP_TIMERS The process ended at: {end}. And took {time_took}.')
+    print(f'APP_TIMERS process took {time_took}')
 
 
 

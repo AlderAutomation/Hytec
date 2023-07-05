@@ -53,20 +53,20 @@ class Readings:
         elif self.ch_num == "D4":
             self.hardware_name = "Generic (D4)"
         
-        thelog.debug(f'Dataclass hardware name has been assigning {self.hardware_name} based on {self.ch_num}')
+        thelog.debug(f'READING_FUNC Dataclass hardware name has been assigned {self.hardware_name} based on {self.ch_num}')
 
     
     def set_install_id(self, installation_id) -> None:
         """Set the installation ID for the dataclass"""
-        thelog.debug(f'Setting the installation ID to {installation_id}')
+        thelog.debug(f'READING_FUNC Setting the installation ID to {installation_id}')
         self.installation_id = installation_id
 
 
     def set_received_datetime_or_posted(self, column: str, time: str) -> None:
         '''set the received_datetime or posted value for sql col'''
         if column == "received_datetime":
-            thelog.debug(f'Setting the received_datetime to {time}')
+            thelog.debug(f'READING_FUNC Setting the received_datetime to {time}')
             self.received_datetime = time
         elif column == 'posted':
-            thelog.debug(f'Setting the posted time to {time}')
+            thelog.debug(f'READING_FUNC Setting the posted time to {time}')
             self.posted = time 

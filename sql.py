@@ -33,7 +33,7 @@ class Hysql:
 
         query = f"SELECT * from myhytec_dotcomdb.oi4h8_installations where device_serial_num = '{serial}';"
         self.my_cursor.execute(query)
-        thelog.debug(f'Looking up device {serial}')
+        thelog.debug(f'DEV_LOOKUP Looking up device {serial}')
 
         return self.my_cursor.fetchall()
 
@@ -49,7 +49,7 @@ class Hysql:
         placeholders = ', '.join(['%s'] * len(values)) 
 
         query = f"INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders});"
-        thelog.debug(f'Inserting data into DB using: {query}')
+        thelog.debug(f'SQL_FUNC Inserting data into DB using: {query}')
         self.my_cursor.execute(query, values)
         self.my_db.commit()
         print(self.my_cursor.rowcount, 'records inserted.')
