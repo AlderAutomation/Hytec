@@ -33,7 +33,7 @@ class Hysql:
 
         query = f"SELECT * from myhytec_dotcomdb.oi4h8_installations where device_serial_num = '{serial}';"
         self.my_cursor.execute(query)
-        thelog.debug(f'DEV_LOOKUP Looking up device {serial}')
+        thelog.debug(f'SQL_FUNC Looking up device {serial}')
 
         return self.my_cursor.fetchall()
 
