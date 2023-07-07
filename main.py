@@ -64,21 +64,11 @@ def testing_shit():
     #     print(serial)
 
     'Reading single serial number'
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device("1803050206"))
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1803050206"))
     # write_readings_to_sql(hysql, readings_list)
 
-    # for reading in readings_list:
-    #     print(reading)
-
-    'Examing X-Rate headers'
-    serial_list = FAPI.list_devices()
-    for serial in serial_list['controller-list']:
-        print(serial)
-
-    # headers = serial_list.headers
-
-    # for header, value in headers:
-    #     print(f'{header}:{value}')
+    for reading in readings_list:
+        print(reading)
 
 
 
