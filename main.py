@@ -21,10 +21,10 @@ def write_readings_to_sql(Hysql, readings_list: list) -> None:
             for reading in readings_list:
                 reading.set_install_id(installation_id)
                 if reading.ch_num in ["R1", "R2", "R3", "R4", "R5", "R6"]:
-                    print(f'Skipping {reading.ch_num}')
+                    thelog.debug(f'Skipping {reading.ch_num}')
                 else:
                     Hysql.installations_data_add_row(reading)
-                    print(f'Inserted {reading.hardware_name} into DB')
+                    thelog.debug(f'Inserted {reading.hardware_name} into DB')
         except Exception as e:
             thelog.error(f'LOG_ERROR This device {readings_list[0].dev_serial} failed with following error {e} \n {readings_list[0]}')
 
@@ -54,7 +54,7 @@ def main():
 
 def testing_shit():
     FAPI = Fluent_Data()
-    # hysql = Hysql()
+    hysql = Hysql()
 
     'For doing list of serials'
     # serial_list = FAPI.list_devices()
@@ -64,11 +64,15 @@ def testing_shit():
     #     print(serial)
 
     'Reading single serial number'
-    readings_list = FAPI.set_reading_obj(FAPI.get_device("1803050206"))
-    # write_readings_to_sql(hysql, readings_list)
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1910291418"))
+    write_readings_to_sql(hysql, readings_list)
+    # for reading in readings_list:
+    #     print(reading)
 
-    for reading in readings_list:
-        print(reading)
+
+
+    # for reading in readings_list:
+    #     print(reading)
 
 
 
@@ -78,4 +82,9 @@ if __name__=="__main__":
 
 
 # TODO add multithreading to make this faster? 
- 
+
+# TODO ERROR 2023-07-06 21:21:04,563 - LOG_ERROR This device 1703140574 failed with following error list index out of range 
+# TODO Readings(dev_serial=1703140574, custom_name='AquaSoft', ch_num='S11', ch_type='C_COND', subch_type='VALUE', data_value='42', units='ppm', hardware_name='Sensor (S11)', installation_id=None, received_datetime='2023-07-06 21:21:04', posted=None)
+
+# 1910291418 - no sub channels 
+# 1602122079 - working 

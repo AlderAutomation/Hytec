@@ -52,7 +52,7 @@ class Hysql:
         thelog.debug(f'SQL_FUNC Inserting data into DB using: {query}')
         self.my_cursor.execute(query, values)
         self.my_db.commit()
-        print(self.my_cursor.rowcount, 'records inserted.')
+        thelog.debug(f'SQL_WRITE {self.my_cursor.rowcount} records inserted.')
 
 
 def main():
