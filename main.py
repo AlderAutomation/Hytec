@@ -82,9 +82,3 @@ if __name__=="__main__":
 
 
 # TODO add multithreading to make this faster? 
-
-# TODO ERROR 2023-07-06 21:21:04,563 - LOG_ERROR This device 1703140574 failed with following error list index out of range 
-# TODO Readings(dev_serial=1703140574, custom_name='AquaSoft', ch_num='S11', ch_type='C_COND', subch_type='VALUE', data_value='42', units='ppm', hardware_name='Sensor (S11)', installation_id=None, received_datetime='2023-07-06 21:21:04', posted=None)
-
-# 1910291418 - no sub channels 
-# 1602122079 - working 
