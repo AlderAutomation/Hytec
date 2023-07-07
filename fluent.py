@@ -86,6 +86,7 @@ class Fluent_Data:
                 if 'subchannel' in r:
                     for sub in r['subchannel']:
                         ch_name = r['channel-name']
+                        # TODO handle and log ascii character better 
                         ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
                         ch_num = r['channel-number']
                         ch_type = r['channel-type']
