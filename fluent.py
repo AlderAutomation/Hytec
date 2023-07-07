@@ -84,7 +84,6 @@ class Fluent_Data:
             for r in readings:
                 serial = int(data["serial-number"])
                 if 'subchannel' in r:
-                    # TODO need a countering else to handle readings with out subchannels 
                     for sub in r['subchannel']:
                         ch_name = r['channel-name']
                         ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
@@ -102,7 +101,23 @@ class Fluent_Data:
                         read_obj.set_received_datetime_or_posted('received_datetime', received)
 
                         reading_obj_list.append(read_obj)
-        
+                
+                else: 
+                    ch_name = r['channel-name']
+                    ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
+                    ch_num = r['channel-number']
+                    ch_type = r['channel-type']
+                    sub_type = r['channel-name']
+                    sub_value = "LOW"
+                    sub_units = ""
+
+
+                    read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
+                    received = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    read_obj.set_received_datetime_or_posted('received_datetime', received)
+
+                    reading_obj_list.append(read_obj)
+
             return reading_obj_list
         
     
@@ -113,16 +128,3 @@ class Fluent_Data:
         json_response = response.json()
 
         return json_response
-
-
-
-
-def main():
-    FAPI = Fluent_Data()
-
-    resp = FAPI.list_devices()
-
-
-
-if __name__=="__main__":
-    main()

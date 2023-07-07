@@ -44,10 +44,15 @@ class Readings:
             else:
                 self.hardware_name = "FlowMeter Rate (D1)"
         elif self.ch_num == "D2":
-            self.hardware_name = "Generic (D3)"
+            if self.subch_type == "Aqua Level":
+                self.hardware_name = "Generic (D2)"
+            else:
+                self.hardware_name = "Generic (D3)"
         elif self.ch_num == "D3":
             if self.subch_type == "TOTAL":
                 self.hardware_name = "FlowMaster Total (D2)"
+            elif self.subch_type == "pH Level":
+                self.hardware_name = "Generic (D3)"
             else:
                 self.hardware_name = "FlowMaster Rate (D2)"
         elif self.ch_num == "D4":
