@@ -2,6 +2,7 @@ import requests
 import json
 import logging 
 import datetime
+from time import sleep
 
 import reading 
 import config 
@@ -23,6 +24,24 @@ HEADERS = {
 class Fluent_Data:
     def __init__(self) -> None:
         thelog.debug('Fluent_Data class init')
+        self.sess = self.create_session()
+
+    
+    def create_session(self) -> object:
+        s = requests.Session()
+        s.headers.update(HEADERS)
+
+        def api_calls(r, *args, **kwargs):
+            calls_left = r.headers['X-Rate-Limit-Remaining']
+            thelog.debug(f"API_X_RATE_LIMIT Calls left: {calls_left}")
+
+            if int(calls_left) == 2: 
+                thelog.debug("API_X_RATE_LIMIT X-Rate_Limit close, Sleeping App" )
+                sleep(5)
+
+        s.hooks['response'] = api_calls
+
+        return s
 
 
     def list_devices(self) -> None: 
@@ -30,7 +49,7 @@ class Fluent_Data:
 
         type_of_req = "controller/list/"
         self.url = BASE_URL + type_of_req
-        response = requests.get(self.url, headers=HEADERS)
+        response = self.sess.get(self.url)
         thelog.debug(f'API_RESPONSE Listing device from {self.url} with a response of {response}')
         json_response = response.json()
 
@@ -42,7 +61,7 @@ class Fluent_Data:
 
         type_of_req = f"controller/current-readings/{serial}"
         self.url = BASE_URL + type_of_req
-        response = requests.get(self.url, headers=HEADERS)
+        response = self.sess.get(self.url, headers=HEADERS)
         thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of {response}')
         json_response = response.json()
 
@@ -90,7 +109,7 @@ class Fluent_Data:
     def list_active_alarms(self, serial: str) -> None:
         type_of_req = f"controller/active-alarms/{serial}"
         self.url = BASE_URL + type_of_req
-        response = requests.get(self.url, headers=HEADERS)
+        response = self.sess.get(self.url, headers=HEADERS)
         json_response = response.json()
 
         return json_response
@@ -99,7 +118,10 @@ class Fluent_Data:
 
 
 def main():
-    print('hello')
+    FAPI = Fluent_Data()
+
+    resp = FAPI.list_devices()
+
 
 
 if __name__=="__main__":
