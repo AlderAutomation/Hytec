@@ -57,6 +57,8 @@ class Readings:
                 self.hardware_name = "FlowMaster Rate (D2)"
         elif self.ch_num == "D4":
             self.hardware_name = "Generic (D4)"
+        elif self.ch_num == "D6":
+            self.hardware_name = "Generic (D6)"
         
         thelog.debug(f'READING_FUNC Dataclass hardware name has been assigned {self.hardware_name} based on {self.ch_num}')
 
