@@ -5,7 +5,7 @@ import datetime
 import config
 
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename=f"{str(datetime.datetime.now())}.log", format = LOG_FORMAT)
+logging.basicConfig(filename=f"./Logs/{str(datetime.datetime.now())}.log", format = LOG_FORMAT)
 thelog = logging.getLogger()
 thelog.setLevel(config.LOGLEVEL)
 
