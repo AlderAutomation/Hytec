@@ -56,6 +56,7 @@ def testing_shit():
     FAPI = Fluent_Data()
     hysql = Hysql()
 
+
     'For doing list of serials'
     # serial_list = FAPI.list_devices()
     # log_serial_list_length(serial_list['controller-list'])
@@ -64,21 +65,15 @@ def testing_shit():
     #     print(serial)
 
     'Reading single serial number'
-    readings_list = FAPI.set_reading_obj(FAPI.get_device("1910291418"))
-    write_readings_to_sql(hysql, readings_list)
-    # for reading in readings_list:
-    #     print(reading)
-
-
-
-    # for reading in readings_list:
-    #     print(reading)
+    readings_list = FAPI.set_reading_obj(FAPI.get_device("1609132082"))
+    # write_readings_to_sql(hysql, readings_list)
+    for reading in readings_list:
+        print(reading)
 
 
 
 if __name__=="__main__":
-    # main()
+    # while True:
+        # main()
+    
     testing_shit()
-
-
-# TODO add multithreading to make this faster? 
