@@ -4,8 +4,8 @@ import datetime
 
 import config
 
-LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename=f"./Logs/{str(datetime.datetime.now())}.log", format = LOG_FORMAT)
+LOG_FORMAT = '%(levelname)s %(asctime)s - %(message)s'
+logging.basicConfig(filename=f'./Logs/{str(datetime.datetime.now())}.log', format = LOG_FORMAT)
 thelog = logging.getLogger()
 thelog.setLevel(config.LOGLEVEL)
 
@@ -28,51 +28,53 @@ class Readings:
 
 
     def __post_init__(self) -> None: 
-        """create the hardware_name fields by mapping all the numbers to 
-        their equivalent current value in the SQL"""
+        '''create the hardware_name fields by mapping all the numbers to 
+        their equivalent current value in the SQL'''
         
-        if self.ch_num == "S11":
-            self.hardware_name = "Sensor (S11)"
-        elif self.ch_num == "S12":
-            self.hardware_name = "Sensor Temperature (S12)"
-        elif self.ch_num == "S21":
-            self.hardware_name = "Sensor (S21)"
-        elif self.ch_num == "S22":
-            self.hardware_name = "Sensor Temperature (S22)"
-        elif self.ch_num == "D1":
-            if self.subch_type == "TOTAL":
-                self.hardware_name = "FlowMeter Total (D1)"
+        if self.ch_num == 'S11':
+            self.hardware_name = 'Sensor (S11)'
+        elif self.ch_num == 'S12':
+            self.hardware_name = 'Sensor Temperature (S12)'
+        elif self.ch_num == 'S21':
+            self.hardware_name = 'Sensor (S21)'
+        elif self.ch_num == 'S22':
+            self.hardware_name = 'Sensor Temperature (S22)'
+        elif self.ch_num == 'D1':
+            if self.subch_type == 'TOTAL':
+                self.hardware_name = 'FlowMeter Total (D1)'
             else:
-                self.hardware_name = "FlowMeter Rate (D1)"
-        elif self.ch_num == "D2":
-            if self.subch_type == "Aqua Level":
-                self.hardware_name = "Generic (D2)"
+                self.hardware_name = 'FlowMeter Rate (D1)'
+        elif self.ch_num == 'D2':
+            if self.subch_type == 'Aqua Level':
+                self.hardware_name = 'Generic (D2)'
             else:
-                self.hardware_name = "Generic (D3)"
-        elif self.ch_num == "D3":
-            if self.subch_type == "TOTAL":
-                self.hardware_name = "FlowMaster Total (D2)"
-            elif self.subch_type == "pH Level":
-                self.hardware_name = "Generic (D3)"
+                self.hardware_name = 'Generic (D3)'
+        elif self.ch_num == 'D3':
+            if self.subch_type == 'TOTAL':
+                self.hardware_name = 'FlowMaster Total (D2)'
+            elif self.subch_type == 'pH Level':
+                self.hardware_name = 'Generic (D3)'
             else:
-                self.hardware_name = "FlowMaster Rate (D2)"
-        elif self.ch_num == "D4":
-            self.hardware_name = "Generic (D4)"
-        elif self.ch_num == "D6":
-            self.hardware_name = "Generic (D6)"
+                self.hardware_name = 'FlowMaster Rate (D2)'
+        elif self.ch_num == 'D4':
+            self.hardware_name = 'Generic (D4)'
+        elif self.ch_num == 'D6':
+            self.hardware_name = 'Generic (D6)'
         
         thelog.debug(f'READING_FUNC Dataclass hardware name has been assigned {self.hardware_name} based on {self.ch_num}')
 
     
     def set_install_id(self, installation_id) -> None:
-        """Set the installation ID for the dataclass"""
+        '''Set the installation ID for the dataclass'''
+
         thelog.debug(f'READING_FUNC Setting the installation ID to {installation_id}')
         self.installation_id = installation_id
 
 
     def set_received_datetime_or_posted(self, column: str, time: str) -> None:
         '''set the received_datetime or posted value for sql col'''
-        if column == "received_datetime":
+
+        if column == 'received_datetime':
             thelog.debug(f'READING_FUNC Setting the received_datetime to {time}')
             self.received_datetime = time
         elif column == 'posted':
