@@ -83,42 +83,46 @@ class Fluent_Data:
             readings = data['readings']
             for r in readings:
                 serial = int(data['serial-number'])
-                # TODO this is v keeps breaking the app with non iterable nonetypes
-                if 'subchannel' in r:
-                    for sub in r['subchannel']:
+                try:
+                    # TODO this is v keeps breaking the app with non iterable nonetypes
+                    if 'subchannel' in r:
+                        for sub in r['subchannel']:
+                            ch_name = r['channel-name']
+                            # TODO handle and log ascii character better 
+                            ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
+                            ch_num = r['channel-number']
+                            ch_type = r['channel-type']
+                            sub_type = sub['type']
+                            sub_value = sub['value']
+                            try:
+                                sub_units = sub['units']
+                            except Exception as e:
+                                sub_units = ''
+
+                            read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
+                            received = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                            read_obj.set_received_datetime_or_posted('received_datetime', received)
+
+                            reading_obj_list.append(read_obj)
+                    
+                    else: 
                         ch_name = r['channel-name']
-                        # TODO handle and log ascii character better 
                         ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
                         ch_num = r['channel-number']
                         ch_type = r['channel-type']
-                        sub_type = sub['type']
-                        sub_value = sub['value']
-                        try:
-                            sub_units = sub['units']
-                        except Exception as e:
-                            sub_units = ''
+                        sub_type = r['channel-name']
+                        sub_value = 'LOW'
+                        sub_units = ''
+
 
                         read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
                         received = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                         read_obj.set_received_datetime_or_posted('received_datetime', received)
 
                         reading_obj_list.append(read_obj)
-                
-                else: 
-                    ch_name = r['channel-name']
-                    ch_name = ch_name.encode('ascii', 'ignore').decode('utf-8')
-                    ch_num = r['channel-number']
-                    ch_type = r['channel-type']
-                    sub_type = r['channel-name']
-                    sub_value = 'LOW'
-                    sub_units = ''
-
-
-                    read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
-                    received = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                    read_obj.set_received_datetime_or_posted('received_datetime', received)
-
-                    reading_obj_list.append(read_obj)
+                except Exception as e:
+                    # TODO add slack notification as well... So i dont have to dig through logs. 
+                    thelog.error(f"ERROR occurred while trying to handle {serial}: \n {e}")
 
             return reading_obj_list
         
