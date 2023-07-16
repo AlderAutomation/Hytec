@@ -67,7 +67,7 @@ def main():
 
     for serial in serial_list['controller-list']:
         readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
-        write_readings_to_sql(hysql, readings_list)
+        write_readings_to_sql(hysql, FAPI, readings_list)
 
     end = datetime.datetime.now()
     time_took = end - start
