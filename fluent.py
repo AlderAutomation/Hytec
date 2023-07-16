@@ -129,3 +129,17 @@ class Fluent_Data:
         json_response = response.json()
 
         return json_response
+    
+
+
+def main():
+    FAPI = Fluent_Data()
+    dev_response = FAPI.get_device('2101110445')
+    readings_list = FAPI.set_reading_obj(dev_response)
+
+    for reading in readings_list:
+        print (reading)
+
+
+if __name__=="__main__":
+    main()
