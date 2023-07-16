@@ -55,6 +55,35 @@ class Hysql:
         thelog.debug(f'SQL_WRITE {self.my_cursor.rowcount} records inserted.')
 
 
+    def alarm_data_add_row(self, dataclass: object) -> None:
+        dataclass.set_received_datetime_or_posted('posted', self.posted)
+
+        table_name = 'myhytec_dotcomdb.oi4h8_installation_problem_data'
+        cols = ['installations_installation_id', 'received_datetime', 'alarm_code']
+        values = [dataclass.installation_id, dataclass.received_datetime, dataclass.alarm]
+
+        columns_str = ', '.join(cols)
+        placeholders = ', '.join(['%s'] * len(values))
+
+        query = f'INSERT INTO {table_name} ({columns_str}) VALUES ({placeholders});'
+        thelog.debug(f'SQL_FUNC Inserting data into DB using: {query}')
+        self.my_cursor.execute(query, values)
+        self.my_db.commit()
+        thelog.debug(f'SQL_WRITE {self.my_cursor.rowcount} records inserted.')
+        
+
+    def alarm_data_inInstallations_update(self, dataclass: object) -> None:
+        dataclass.set_received_datetime_or_posted('posted', self.posted)
+
+        table_name = 'myhytec_dotcomdb.oi4h8_installations'
+
+        query = f"UPDATE {table_name} SET alarm_code = '{dataclass.alarm}' WHERE installation_id = {dataclass.installation_id};"
+        thelog.debug(f'SQL_FUNC Inserting data into DB using: {query}')
+        self.my_cursor.execute(query)
+        self.my_db.commit()
+        thelog.debug(f'SQL_WRITE {self.my_cursor.rowcount} records inserted.')
+
+
 def main():
     now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     hysql = Hysql()

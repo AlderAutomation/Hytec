@@ -14,7 +14,7 @@ thelog = logging.getLogger()
 thelog.setLevel(config.LOGLEVEL)
 
 
-def write_readings_to_sql(Hysql, readings_list: list) -> None:
+def write_readings_to_sql(Hysql, FAPI, readings_list: list) -> None:
     if readings_list != False:
         device = Hysql.device_lookup(readings_list[0].dev_serial)
         try:
@@ -22,11 +22,17 @@ def write_readings_to_sql(Hysql, readings_list: list) -> None:
 
             for reading in readings_list:
                 reading.set_install_id(installation_id)
-                # TODO handle R alarm codes 
-                if reading.ch_num in ['R1', 'R2', 'R3', 'R4', 'R5', 'R6']:
+                if reading.ch_num in ['R1', 'R2', 'R3', 'R4', 'R5']:
                     thelog.debug(f'Skipping {reading.ch_num}')
+                elif reading.ch_num == 'R6':
+                    reading.set_alarm(FAPI.alarm_lookup(FAPI.get_active_alarms(reading.dev_serial)))
+                    if reading.alarm != None:
+                        Hysql.alarm_data_add_row(reading)
+                        Hysql.alarm_data_inInstallations_update(reading)
+                        thelog.debug(f'Inserted {reading.alarm} into DB problem data')
                 else:
                     Hysql.installations_data_add_row(reading)
+                    Hysql.alarm_data_inInstallations_update(reading)
                     thelog.debug(f'Inserted {reading.hardware_name} into DB')
         except Exception as e:
             thelog.error(f'LOG_ERROR This device {readings_list[0].dev_serial} failed with following error {e} \n {readings_list[0]}')
@@ -81,13 +87,12 @@ def testing_shit():
     #     print(serial)
 
     'Reading single serial number'
-    readings_list = FAPI.set_reading_obj(FAPI.get_device('2002040060'))
-
-    write_readings_to_sql(hysql, readings_list)
+    readings_list = FAPI.set_reading_obj(FAPI.get_device('1608315810'))
 
     # for reading in readings_list:
     #     print(reading)
 
+    write_readings_to_sql(hysql, FAPI, readings_list)
 
 
 if __name__=='__main__':

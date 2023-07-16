@@ -1,3 +1,4 @@
+import subprocess
 import requests
 import json
 import logging 
@@ -84,7 +85,6 @@ class Fluent_Data:
             for r in readings:
                 serial = int(data['serial-number'])
                 try:
-                    # TODO this is v keeps breaking the app with non iterable nonetypes
                     if 'subchannel' in r:
                         for sub in r['subchannel']:
                             ch_name = r['channel-name']
@@ -114,36 +114,59 @@ class Fluent_Data:
                         sub_value = 'LOW'
                         sub_units = ''
 
-
                         read_obj = reading.Readings(serial, ch_name, ch_num, ch_type, sub_type, sub_value, sub_units)
                         received = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                         read_obj.set_received_datetime_or_posted('received_datetime', received)
 
                         reading_obj_list.append(read_obj)
+
                 except Exception as e:
-                    # TODO add slack notification as well... So i dont have to dig through logs. 
                     thelog.error(f"ERROR occurred while trying to handle {serial}: \n {e}")
+                    self.exception_notification(e)
 
             return reading_obj_list
         
-    
-    def list_active_alarms(self, serial: str) -> None:
+
+    def exception_notification(self, exception) -> None: 
+        '''On exit function to notify that the system is down'''
+        script_path = './slack_notification.sh'
+        arg_text = exception
+
+        subprocess.call(f'/bin/bash {script_path} {arg_text}', shell=True)
+
+
+    def get_active_alarms(self, serial: str) -> None:
         type_of_req = f'controller/active-alarms/{serial}'
         self.url = BASE_URL + type_of_req
         response = self.sess.get(self.url, headers=HEADERS)
         json_response = response.json()
 
         return json_response
-    
+
+
+    def alarm_lookup(self, alarms_list:list) -> str:
+        '''lookup alarm code and return alram string for SQL writes'''
+
+        if len(alarms_list) != 0:
+            for reading in alarms_list['alarm-info']:
+                if reading['alarm-type'] != 'fluent-alarm':
+                    alr_text = reading['alarm-text']
+                    alr_ch_name = reading['channel-name']
+                    alr_ch_num = reading['channel-number']
+
+            return f'{alr_ch_name} ({alr_ch_num}) {alr_text}'
+
+
+    def set_reading_alarm(self, serial) -> str:
+        alarm_code = self.alarm_lookup(self.get_active_alarms(serial))
+
+        return alarm_code
+
 
 
 def main():
     FAPI = Fluent_Data()
-    dev_response = FAPI.get_device('2002040060')
-    readings_list = FAPI.set_reading_obj(dev_response)
-
-    for reading in readings_list:
-        print (reading)
+    print(FAPI.alarm_lookup(FAPI.get_active_alarms(1608315810)))
 
 
 if __name__=='__main__':

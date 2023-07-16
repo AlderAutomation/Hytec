@@ -21,6 +21,7 @@ class Readings:
     subch_type: str
     data_value: str
     units: str
+    alarm:str = " "
     hardware_name: str = None
     installation_id: str = None
     received_datetime: str = None
@@ -69,6 +70,13 @@ class Readings:
 
         thelog.debug(f'READING_FUNC Setting the installation ID to {installation_id}')
         self.installation_id = installation_id
+
+
+    def set_alarm(self, alarm:str) -> None:
+        '''Set the installation ID for the dataclass'''
+
+        thelog.debug(f'READING_FUNC Setting the alarm to {alarm}')
+        self.alarm = alarm
 
 
     def set_received_datetime_or_posted(self, column: str, time: str) -> None:
