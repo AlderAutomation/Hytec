@@ -1,0 +1,1220 @@
+DEBUG 2023-07-16 16:03:25,644 - The dataclass has been init
+DEBUG 2023-07-16 16:03:25,701 - Fluent_Data class init
+DEBUG 2023-07-16 16:03:25,701 - Hysql has been init
+DEBUG 2023-07-16 16:03:26,074 - <mysql.connector.connection_cext.CMySQLConnection object at 0x7fef92aa67d0>
+INFO 2023-07-16 16:03:26,076 - APP_TIMERS process starts at 2023-07-16 16:03:26.076647
+DEBUG 2023-07-16 16:03:26,087 - Starting new HTTPS connection (1): api.fluent.walchem.com:443
+DEBUG 2023-07-16 16:03:26,546 - https://api.fluent.walchem.com:443 "GET /controller/list/ HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:03:26,547 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:03:26,554 - API_RESPONSE Listing device from https://api.fluent.walchem.com/controller/list/ with a response of <Response [200]>
+INFO 2023-07-16 16:03:26,558 - DEV_SERIAL_COUNT There are 507 serials in this run
+DEBUG 2023-07-16 16:03:36,049 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2305020209 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:03:36,049 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:03:36,056 - DEV_LOOKUP Doing device lookup of 2305020209 with response of <Response [200]>
+DEBUG 2023-07-16 16:03:36,061 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:03:36,065 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,065 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:03:36,070 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,070 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:03:36,074 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,078 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:03:36,078 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,082 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:03:36,086 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,090 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:03:36,094 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,098 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:03:36,102 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,105 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:03:36,109 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,113 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:03:36,117 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:36
+DEBUG 2023-07-16 16:03:36,151 - SQL_FUNC Looking up device 2305020209
+ERROR 2023-07-16 16:03:36,152 - LOG_ERROR This device 2305020209 failed with following error list index out of range 
+ Readings(dev_serial=2305020209, custom_name='ORP', ch_num='S11', ch_type='ORP', subch_type='VALUE', data_value='595.9', units='mV', alarm=' ', hardware_name='Sensor (S11)', installation_id=None, received_datetime='2023-07-16 16:03:36', posted=None)
+DEBUG 2023-07-16 16:03:42,644 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2305020210 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:03:42,645 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:03:42,652 - DEV_LOOKUP Doing device lookup of 2305020210 with response of <Response [200]>
+DEBUG 2023-07-16 16:03:42,655 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:03:42,659 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,664 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:03:42,669 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,673 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:03:42,673 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,678 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:03:42,682 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,686 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:03:42,690 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,695 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:03:42,699 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,699 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:03:42,703 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,707 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:03:42,712 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,716 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:03:42,721 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:42
+DEBUG 2023-07-16 16:03:42,903 - SQL_FUNC Looking up device 2305020210
+ERROR 2023-07-16 16:03:42,904 - LOG_ERROR This device 2305020210 failed with following error list index out of range 
+ Readings(dev_serial=2305020210, custom_name='ORP', ch_num='S11', ch_type='ORP', subch_type='VALUE', data_value='606.7', units='mV', alarm=' ', hardware_name='Sensor (S11)', installation_id=None, received_datetime='2023-07-16 16:03:42', posted=None)
+DEBUG 2023-07-16 16:03:51,851 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/1602122079 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:03:51,852 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:03:51,852 - DEV_LOOKUP Doing device lookup of 1602122079 with response of <Response [200]>
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:03:51,853 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,860 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:03:51,864 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,869 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:03:51,869 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,873 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:03:51,877 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,881 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:03:51,882 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,886 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:03:51,890 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,894 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:03:51,899 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,903 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:03:51,907 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,912 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:03:51,916 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,920 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:03:51,920 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,924 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:03:51,928 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:51,932 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:03:51,936 - READING_FUNC Setting the received_datetime to 2023-07-16 16:03:51
+DEBUG 2023-07-16 16:03:52,119 - SQL_FUNC Looking up device 1602122079
+DEBUG 2023-07-16 16:03:52,120 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,120 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,126 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,140 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,140 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,140 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,155 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,155 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:03:52,155 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,156 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,160 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,180 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,180 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,180 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,187 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,187 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:03:52,187 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,187 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,192 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,206 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,206 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,206 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,213 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,213 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:03:52,213 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,213 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,218 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,233 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,233 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,233 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,241 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,241 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:03:52,241 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,241 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,246 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,264 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,264 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,264 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,271 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,271 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:03:52,272 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,272 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,276 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,296 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,296 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,296 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,303 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,303 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:03:52,303 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,303 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,308 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,326 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,327 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,327 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,332 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,332 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:03:52,332 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,332 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,336 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,355 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,355 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,355 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,360 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,360 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:03:52,360 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,360 - Skipping R1
+DEBUG 2023-07-16 16:03:52,360 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,364 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,368 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:03:52,385 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:03:52,386 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:03:52,386 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 554;
+DEBUG 2023-07-16 16:03:52,391 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:03:52,391 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:03:52,391 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,391 - Skipping R3
+DEBUG 2023-07-16 16:03:52,391 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,395 - Skipping R4
+DEBUG 2023-07-16 16:03:52,399 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,403 - Skipping R5
+DEBUG 2023-07-16 16:03:52,407 - READING_FUNC Setting the installation ID to 554
+DEBUG 2023-07-16 16:03:52,534 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/1602122079 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:03:52,535 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:03:52,542 - READING_FUNC Setting the alarm to None
+DEBUG 2023-07-16 16:04:01,294 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/1602122080 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:01,295 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:01,303 - DEV_LOOKUP Doing device lookup of 1602122080 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:01,307 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:01,311 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,316 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:01,320 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,324 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:01,328 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,333 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:01,337 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,341 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:01,345 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,345 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:01,350 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,354 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:01,354 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,358 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:01,358 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,362 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:01,362 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,366 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:01,370 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,375 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:01,375 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,379 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:01,383 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,387 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:01,391 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,395 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:01,399 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,403 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:01,407 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,408 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:01,412 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:01
+DEBUG 2023-07-16 16:04:01,649 - SQL_FUNC Looking up device 1602122080
+DEBUG 2023-07-16 16:04:01,649 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,650 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,656 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,678 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,678 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,679 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,693 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,693 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:01,693 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,693 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,693 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,710 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,710 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,710 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,718 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,718 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:01,718 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,719 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,719 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,734 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,735 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,735 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,743 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,744 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:01,744 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,744 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,748 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,765 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,765 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,765 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,773 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,773 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:01,773 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,774 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,778 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,797 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,797 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,798 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,807 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,807 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:01,807 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,807 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,807 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,824 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,825 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,825 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,836 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,836 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:01,836 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,836 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,840 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,854 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,854 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,854 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,861 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,861 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:01,861 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,861 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,861 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,881 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,882 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,882 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,895 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,895 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:01,895 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,896 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,896 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,907 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,907 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,907 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,913 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,913 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:01,913 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,913 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,913 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:01,931 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:01,931 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:01,931 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 553;
+DEBUG 2023-07-16 16:04:01,938 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:01,939 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:01,939 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,939 - Skipping R1
+DEBUG 2023-07-16 16:04:01,943 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,943 - Skipping R2
+DEBUG 2023-07-16 16:04:01,947 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,947 - Skipping R3
+DEBUG 2023-07-16 16:04:01,951 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,951 - Skipping R4
+DEBUG 2023-07-16 16:04:01,956 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:01,956 - Skipping R5
+DEBUG 2023-07-16 16:04:01,970 - READING_FUNC Setting the installation ID to 553
+DEBUG 2023-07-16 16:04:02,093 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/1602122080 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:02,093 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:04:02,099 - READING_FUNC Setting the alarm to None
+DEBUG 2023-07-16 16:04:08,837 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/1607264385 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:08,838 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:08,844 - DEV_LOOKUP Doing device lookup of 1607264385 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:08,848 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:08,852 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,856 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:08,856 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,860 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:08,864 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,868 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:08,872 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,876 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:08,880 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,884 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:08,888 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,891 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:08,895 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,899 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:08,903 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,907 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:08,912 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,916 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:08,920 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,924 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:08,928 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,932 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:08,936 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,937 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:08,941 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,945 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:08,949 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:08,953 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:08,958 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:08
+DEBUG 2023-07-16 16:04:09,020 - SQL_FUNC Looking up device 1607264385
+DEBUG 2023-07-16 16:04:09,020 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,020 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,026 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,040 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,040 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,040 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,055 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,055 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:09,055 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,055 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,055 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,073 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,073 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,073 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,078 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,078 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:09,078 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,078 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,082 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,096 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,096 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,096 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,102 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,102 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:09,102 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,102 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,107 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,127 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,127 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,127 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,133 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,133 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:09,134 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,134 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,138 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,158 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,158 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,158 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,163 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,163 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:09,163 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,163 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,167 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,182 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,182 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,182 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,187 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,187 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:09,187 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,187 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,187 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,202 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,203 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,203 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,211 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,212 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:09,212 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,212 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,212 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,226 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,226 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,226 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,233 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,233 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:09,233 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,233 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,237 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,247 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,247 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,247 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,255 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,256 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:09,256 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,378 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/1607264385 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:09,379 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:04:09,385 - READING_FUNC Setting the alarm to None
+DEBUG 2023-07-16 16:04:09,389 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,393 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,397 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:09,435 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:09,435 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:09,435 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 556;
+DEBUG 2023-07-16 16:04:09,440 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:09,440 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:09,440 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,440 - Skipping R4
+DEBUG 2023-07-16 16:04:09,440 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,445 - Skipping R3
+DEBUG 2023-07-16 16:04:09,449 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,453 - Skipping R2
+DEBUG 2023-07-16 16:04:09,457 - READING_FUNC Setting the installation ID to 556
+DEBUG 2023-07-16 16:04:09,457 - Skipping R1
+DEBUG 2023-07-16 16:04:19,125 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2212161125 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:19,125 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:19,133 - DEV_LOOKUP Doing device lookup of 2212161125 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:19,137 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:19,142 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,146 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:19,150 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,150 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:19,153 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,157 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:19,161 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,165 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:19,169 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,173 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:19,177 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,181 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:19,185 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,189 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:19,193 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,197 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:19,200 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,204 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:19,204 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,208 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:19,212 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,216 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:19,220 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,224 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:19,224 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,228 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:19,235 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,239 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:19,244 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:19,248 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:19,252 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:19
+DEBUG 2023-07-16 16:04:20,297 - SQL_FUNC Looking up device 2212161125
+DEBUG 2023-07-16 16:04:20,297 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,297 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,304 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,322 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,322 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,322 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,338 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,339 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:20,339 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,339 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,339 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,361 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,362 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,362 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,368 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,368 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:20,368 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,368 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,372 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,416 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,416 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,416 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,426 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,427 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:20,427 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,427 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,427 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,446 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,446 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,446 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,469 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,469 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:20,469 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,469 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,469 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,496 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,496 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,496 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,517 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,517 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:20,518 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,518 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,518 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,536 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,536 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,536 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,543 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,543 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:20,544 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,544 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,548 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,564 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,564 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,564 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,571 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,571 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:20,572 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,572 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,572 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,588 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,588 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,588 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,595 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,595 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:20,595 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,595 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,595 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,610 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,610 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,610 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,616 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,616 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:20,616 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,616 - Skipping R1
+DEBUG 2023-07-16 16:04:20,616 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,620 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,624 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:20,640 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:20,640 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:20,640 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 552;
+DEBUG 2023-07-16 16:04:20,645 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:20,645 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:20,645 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,650 - Skipping R2
+DEBUG 2023-07-16 16:04:20,654 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,654 - Skipping R3
+DEBUG 2023-07-16 16:04:20,658 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,663 - Skipping R5
+DEBUG 2023-07-16 16:04:20,663 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,667 - Skipping R4
+DEBUG 2023-07-16 16:04:20,667 - READING_FUNC Setting the installation ID to 552
+DEBUG 2023-07-16 16:04:20,796 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/2212161125 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:20,796 - API_X_RATE_LIMIT Calls left: 29
+ERROR 2023-07-16 16:04:20,796 - LOG_ERROR This device 2212161125 failed with following error cannot access local variable 'alr_ch_name' where it is not associated with a value 
+ Readings(dev_serial=2212161125, custom_name='TDS', ch_num='S11', ch_type='C_COND', subch_type='VALUE', data_value='36', units='ppm', alarm=' ', hardware_name='Sensor (S11)', installation_id=552, received_datetime='2023-07-16 16:04:19', posted='2023-07-16 16:03:26')
+DEBUG 2023-07-16 16:04:27,098 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2301181253 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:27,098 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:27,098 - DEV_LOOKUP Doing device lookup of 2301181253 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:27,105 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:27,110 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,110 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:27,114 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,118 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:27,122 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,127 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:27,131 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,135 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:27,135 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,139 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:27,143 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,147 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:27,151 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,155 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:27,159 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,163 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:27,163 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,167 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:27,171 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,175 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:27,179 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,183 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:27,187 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,191 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:27,191 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,195 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:27,196 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,199 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:27,200 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,204 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:27,208 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:27
+DEBUG 2023-07-16 16:04:27,449 - SQL_FUNC Looking up device 2301181253
+DEBUG 2023-07-16 16:04:27,449 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,449 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,456 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,475 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,476 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,476 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,490 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,490 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:27,490 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,490 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,495 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,512 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,512 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,512 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,519 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,519 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:27,519 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,519 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,524 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,543 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,543 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,543 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,549 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,549 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:27,549 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,549 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,554 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,570 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,570 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,571 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,578 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,578 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:27,578 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,578 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,582 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,601 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,601 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,601 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,607 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,607 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:27,607 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,607 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,611 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,625 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,625 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,625 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,630 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,631 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:27,631 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,631 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,631 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,646 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,646 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,646 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,654 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,655 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:27,655 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,655 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,658 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,672 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,673 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,673 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,681 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,682 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:27,682 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,682 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,686 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,699 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,699 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,699 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,706 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,706 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:27,706 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,706 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,710 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:27,721 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:27,722 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:27,722 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 551;
+DEBUG 2023-07-16 16:04:27,729 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:27,729 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:27,729 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,733 - Skipping R2
+DEBUG 2023-07-16 16:04:27,737 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,741 - Skipping R3
+DEBUG 2023-07-16 16:04:27,741 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,745 - Skipping R1
+DEBUG 2023-07-16 16:04:27,745 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,749 - Skipping R4
+DEBUG 2023-07-16 16:04:27,749 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,754 - Skipping R5
+DEBUG 2023-07-16 16:04:27,754 - READING_FUNC Setting the installation ID to 551
+DEBUG 2023-07-16 16:04:27,884 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/2301181253 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:27,884 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:04:27,891 - READING_FUNC Setting the alarm to None
+DEBUG 2023-07-16 16:04:34,491 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2209191276 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:34,492 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:34,492 - DEV_LOOKUP Doing device lookup of 2209191276 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:34,493 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:34,493 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,500 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:34,504 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,509 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:34,513 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,517 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:34,522 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,526 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:34,531 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,535 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:34,536 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,540 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:34,544 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,548 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:34,553 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,557 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:34,561 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,565 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:34,570 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,574 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:34,578 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,582 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:34,586 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,591 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:34,595 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,599 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:34,603 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,608 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:34,612 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,616 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:34,616 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:34
+DEBUG 2023-07-16 16:04:34,820 - SQL_FUNC Looking up device 2209191276
+DEBUG 2023-07-16 16:04:34,820 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,820 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,827 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,848 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,849 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,849 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,862 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,863 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:34,863 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,863 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,868 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,881 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,881 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,881 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,890 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:34,890 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:34,890 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,890 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,895 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,907 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,907 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,907 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,915 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:34,915 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:34,915 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,915 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,920 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,931 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,932 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,932 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,940 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:34,940 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:34,940 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,945 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,945 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,962 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,962 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,963 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,970 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:34,970 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:34,970 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,970 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,971 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:34,988 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:34,988 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,988 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:34,997 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:34,997 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:34,997 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:34,997 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:34,997 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:35,013 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:35,013 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,013 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:35,022 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:35,023 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:35,023 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,023 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,023 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:35,041 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:35,042 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,042 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:35,050 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:35,050 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:35,050 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,054 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,054 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:35,071 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:35,071 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,071 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:35,086 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:35,086 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:35,086 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,086 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,086 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:35,105 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:35,105 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:35,105 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:35,111 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:35,111 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:35,111 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,111 - Skipping R1
+DEBUG 2023-07-16 16:04:35,115 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,119 - Skipping R4
+DEBUG 2023-07-16 16:04:35,122 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:35,126 - Skipping R5
+DEBUG 2023-07-16 16:04:35,126 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:40,968 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/2209191276 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:40,968 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:40,976 - READING_FUNC Setting the alarm to Temp (S22) Range Alarm
+DEBUG 2023-07-16 16:04:40,980 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:40,985 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_problem_data (installations_installation_id, received_datetime, alarm_code) VALUES (%s, %s, %s);
+DEBUG 2023-07-16 16:04:41,006 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:41,006 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:41,006 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = 'Temp (S22) Range Alarm' WHERE installation_id = 550;
+DEBUG 2023-07-16 16:04:41,021 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:41,021 - Inserted Temp (S22) Range Alarm into DB problem data
+DEBUG 2023-07-16 16:04:41,021 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:41,021 - Skipping R3
+DEBUG 2023-07-16 16:04:41,021 - READING_FUNC Setting the installation ID to 550
+DEBUG 2023-07-16 16:04:41,026 - Skipping R2
+DEBUG 2023-07-16 16:04:47,629 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2209191272 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:47,629 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:47,637 - DEV_LOOKUP Doing device lookup of 2209191272 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:47,641 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:47,641 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,641 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:47,641 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,642 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:47,643 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:47
+DEBUG 2023-07-16 16:04:47,725 - SQL_FUNC Looking up device 2209191272
+DEBUG 2023-07-16 16:04:47,725 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,725 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,725 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,745 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,745 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,745 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,762 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,762 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:47,762 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,762 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,762 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,774 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,774 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,774 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,782 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,782 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:47,782 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,782 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,782 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,799 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,799 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,799 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,812 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,812 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:47,812 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,812 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,816 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,828 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,828 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,829 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,839 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,839 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:47,840 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,840 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,844 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,860 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,860 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,860 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,868 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,868 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:47,869 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,869 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,873 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,888 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,889 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,889 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,896 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,896 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:47,896 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,896 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,896 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,915 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,915 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,915 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,922 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,923 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:47,923 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,923 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,923 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,934 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,934 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,934 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,940 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,941 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:47,941 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,941 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,941 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,958 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,958 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,958 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,963 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,963 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:47,963 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,964 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,967 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:47,980 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:47,980 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:47,981 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 549;
+DEBUG 2023-07-16 16:04:47,986 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:47,987 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:47,987 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,987 - Skipping R1
+DEBUG 2023-07-16 16:04:47,987 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,991 - Skipping R2
+DEBUG 2023-07-16 16:04:47,991 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,995 - Skipping R3
+DEBUG 2023-07-16 16:04:47,999 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:47,999 - Skipping R4
+DEBUG 2023-07-16 16:04:48,003 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:48,003 - Skipping R5
+DEBUG 2023-07-16 16:04:48,007 - READING_FUNC Setting the installation ID to 549
+DEBUG 2023-07-16 16:04:48,142 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/2209191272 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:48,143 - API_X_RATE_LIMIT Calls left: 29
+DEBUG 2023-07-16 16:04:48,149 - READING_FUNC Setting the alarm to None
+DEBUG 2023-07-16 16:04:54,651 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/1902200801 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:54,652 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:04:54,652 - DEV_LOOKUP Doing device lookup of 1902200801 with response of <Response [200]>
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,652 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:04:54,653 - READING_FUNC Setting the received_datetime to 2023-07-16 16:04:54
+DEBUG 2023-07-16 16:04:54,792 - SQL_FUNC Looking up device 1902200801
+DEBUG 2023-07-16 16:04:54,792 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,793 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,799 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,819 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,819 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,819 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,834 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,835 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:04:54,835 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,835 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,835 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,852 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,853 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,853 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,859 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,859 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:04:54,859 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,859 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,859 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,878 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,879 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,879 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,884 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,885 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:04:54,885 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,885 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,889 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,901 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,901 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,901 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,907 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,907 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:04:54,907 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,907 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,907 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,925 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,925 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,925 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,931 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,931 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:04:54,931 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,932 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,935 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,953 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,953 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,953 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,962 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,962 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:04:54,962 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,962 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,962 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:54,976 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:54,976 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,976 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:54,982 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:54,982 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:54,982 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:54,982 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:54,986 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:55,000 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:55,000 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:55,000 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:55,006 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:55,006 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:04:55,006 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,007 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:55,011 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:55,028 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:55,029 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:55,029 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:55,034 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:55,035 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:04:55,035 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,035 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:55,035 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:04:55,054 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:04:55,055 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:04:55,055 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 68;
+DEBUG 2023-07-16 16:04:55,062 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:04:55,062 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:04:55,062 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,062 - Skipping R1
+DEBUG 2023-07-16 16:04:55,067 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,071 - Skipping R2
+DEBUG 2023-07-16 16:04:55,075 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,075 - Skipping R4
+DEBUG 2023-07-16 16:04:55,088 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,088 - Skipping R5
+DEBUG 2023-07-16 16:04:55,088 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,089 - Skipping R3
+DEBUG 2023-07-16 16:04:55,089 - READING_FUNC Setting the installation ID to 68
+DEBUG 2023-07-16 16:04:55,216 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/1902200801 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:04:55,217 - API_X_RATE_LIMIT Calls left: 29
+ERROR 2023-07-16 16:04:55,224 - LOG_ERROR This device 1902200801 failed with following error cannot access local variable 'alr_ch_name' where it is not associated with a value 
+ Readings(dev_serial=1902200801, custom_name='TDS', ch_num='S11', ch_type='C_COND', subch_type='VALUE', data_value='41', units='ppm', alarm=' ', hardware_name='Sensor (S11)', installation_id=68, received_datetime='2023-07-16 16:04:54', posted='2023-07-16 16:03:26')
+DEBUG 2023-07-16 16:05:01,838 - https://api.fluent.walchem.com:443 "GET /controller/current-readings/2209191274 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:05:01,838 - API_X_RATE_LIMIT Calls left: 30
+DEBUG 2023-07-16 16:05:01,845 - DEV_LOOKUP Doing device lookup of 2209191274 with response of <Response [200]>
+DEBUG 2023-07-16 16:05:01,849 - READING_FUNC Dataclass hardware name has been assigned Sensor (S11) based on S11
+DEBUG 2023-07-16 16:05:01,853 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,858 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S12) based on S12
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned Sensor (S21) based on S21
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Total (D1) based on D1
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned FlowMeter Rate (D1) based on D1
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned Sensor Temperature (S22) based on S22
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned Generic (D3) based on D2
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned FlowMaster Rate (D2) based on D3
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned Generic (D4) based on D4
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned None based on R1
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Dataclass hardware name has been assigned None based on R2
+DEBUG 2023-07-16 16:05:01,862 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Dataclass hardware name has been assigned None based on R3
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Dataclass hardware name has been assigned None based on R4
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Dataclass hardware name has been assigned None based on R5
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Dataclass hardware name has been assigned None based on R6
+DEBUG 2023-07-16 16:05:01,863 - READING_FUNC Setting the received_datetime to 2023-07-16 16:05:01
+DEBUG 2023-07-16 16:05:02,160 - SQL_FUNC Looking up device 2209191274
+DEBUG 2023-07-16 16:05:02,160 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,161 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,161 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,173 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,173 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,173 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,191 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,191 - Inserted Sensor (S11) into DB
+DEBUG 2023-07-16 16:05:02,191 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,191 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,191 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,221 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,222 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,222 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,227 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,227 - Inserted Sensor Temperature (S12) into DB
+DEBUG 2023-07-16 16:05:02,227 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,227 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,227 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,244 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,244 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,244 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,251 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,251 - Inserted Sensor (S21) into DB
+DEBUG 2023-07-16 16:05:02,251 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,251 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,251 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,264 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,264 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,264 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,269 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,269 - Inserted FlowMeter Total (D1) into DB
+DEBUG 2023-07-16 16:05:02,269 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,269 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,269 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,286 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,286 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,286 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,293 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,293 - Inserted FlowMeter Rate (D1) into DB
+DEBUG 2023-07-16 16:05:02,293 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,293 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,297 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,316 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,316 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,316 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,323 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,323 - Inserted Sensor Temperature (S22) into DB
+DEBUG 2023-07-16 16:05:02,323 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,323 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,323 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,344 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,344 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,344 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,350 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,350 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:05:02,350 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,350 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,354 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,374 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,374 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,374 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,380 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,380 - Inserted Generic (D3) into DB
+DEBUG 2023-07-16 16:05:02,380 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,381 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,385 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,414 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,414 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,414 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,420 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,420 - Inserted FlowMaster Rate (D2) into DB
+DEBUG 2023-07-16 16:05:02,420 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,424 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,428 - SQL_FUNC Inserting data into DB using: INSERT INTO myhytec_dotcomdb.oi4h8_installation_data (installations_installation_id, received_datetime, hardware_name, custom_name, units, data_value, posted) VALUES (%s, %s, %s, %s, %s, %s, %s);
+DEBUG 2023-07-16 16:05:02,449 - SQL_WRITE 1 records inserted.
+DEBUG 2023-07-16 16:05:02,449 - READING_FUNC Setting the posted time to 2023-07-16 16:03:26
+DEBUG 2023-07-16 16:05:02,449 - SQL_FUNC Inserting data into DB using: UPDATE myhytec_dotcomdb.oi4h8_installations SET alarm_code = ' ' WHERE installation_id = 548;
+DEBUG 2023-07-16 16:05:02,457 - SQL_WRITE 0 records inserted.
+DEBUG 2023-07-16 16:05:02,457 - Inserted Generic (D4) into DB
+DEBUG 2023-07-16 16:05:02,457 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,457 - Skipping R1
+DEBUG 2023-07-16 16:05:02,461 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,462 - Skipping R2
+DEBUG 2023-07-16 16:05:02,467 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,467 - Skipping R3
+DEBUG 2023-07-16 16:05:02,471 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,475 - Skipping R4
+DEBUG 2023-07-16 16:05:02,479 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,484 - Skipping R5
+DEBUG 2023-07-16 16:05:02,488 - READING_FUNC Setting the installation ID to 548
+DEBUG 2023-07-16 16:05:02,619 - https://api.fluent.walchem.com:443 "GET /controller/active-alarms/2209191274 HTTP/1.1" 200 None
+DEBUG 2023-07-16 16:05:02,619 - API_X_RATE_LIMIT Calls left: 29
+ERROR 2023-07-16 16:05:02,626 - LOG_ERROR This device 2209191274 failed with following error cannot access local variable 'alr_ch_name' where it is not associated with a value 
+ Readings(dev_serial=2209191274, custom_name='TDS', ch_num='S11', ch_type='C_COND', subch_type='VALUE', data_value='38', units='ppm', alarm=' ', hardware_name='Sensor (S11)', installation_id=548, received_datetime='2023-07-16 16:05:01', posted='2023-07-16 16:03:26')
