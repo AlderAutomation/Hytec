@@ -11,7 +11,7 @@ There is a slack notification setup with potential for emails to be setup as wel
 - run `docker build -t yourreponame/FluentAPI . `  
 - run `docker run -d -v host/path/to/logging:/app/Logs`    
   
-SQL tables will need to be setup properly will include templates in repo eventually.   
+SQL tables will need to be setup properly. I will include templates in repo eventually.   
 
 
 ### Message Me  
