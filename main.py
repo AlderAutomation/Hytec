@@ -47,8 +47,8 @@ def exit_notification() -> None:
     script_path = './slack_notification.sh'
     arg_text = 'HYTEC_API_HAS_STOPPED_RUNNING_oh_noes'
 
-    subprocess.call(f'/bin/bash {script_path} {arg_text}', shell=True)
-
+    # subprocess.call(f'/bin/bash {script_path} {arg_text} {config.SLACKURL}', shell=True)
+    subprocess.call(f'/bin/bash {script_path} {arg_text} {config.SLACKURL}', shell=True)
 
 def restart_program():
     python = sys.executable
@@ -77,29 +77,31 @@ def main():
 
 def testing_shit():
     FAPI = Fluent_Data()
-    hysql = Hysql()
+    # hysql = Hysql()
 
     'For doing list of serials'
-    # serial_list = FAPI.list_devices()
-    # log_serial_list_length(serial_list['controller-list'])
+    serial_list = FAPI.list_devices()
+    log_serial_list_length(serial_list['controller-list'])
 
-    # for serial in serial_list['controller-list']:
-    #     print(serial)
+    for serial in serial_list['controller-list']:
+        print(serial)
 
     'Reading single serial number'
-    readings_list = FAPI.set_reading_obj(FAPI.get_device('1608315810'))
+    # readings_list = FAPI.set_reading_obj(FAPI.get_device('1608315810'))
 
     # for reading in readings_list:
     #     print(reading)
 
-    write_readings_to_sql(hysql, FAPI, readings_list)
+    # write_readings_to_sql(hysql, FAPI, readings_list)
+    # exit_notification()
+
 
 
 if __name__=='__main__':
-    atexit.register(exit_notification)
+    # atexit.register(exit_notification)
 
-    main()
-    restart_program()
+    # main()
+    # restart_program()
 
 
-    # testing_shit()
+    testing_shit()

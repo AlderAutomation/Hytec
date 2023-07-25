@@ -18,7 +18,7 @@ thelog.setLevel(config.LOGLEVEL)
 BASE_URL = 'https://api.fluent.walchem.com/'
 HEADERS = {
   'accept': '*/*',
-  'authorization': 'Basic bWhlbHRtYW5AYWxkZXJhdXRvbWF0aW9uLmNhOmE1ODhjMDAwLWZjNWYtNGNmNy1iNDYxLTM5OWQ3ZjAyMGQ3Mw=='
+  'authorization': config.FLUENT_API_KEY
 }
 
 
