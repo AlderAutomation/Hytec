@@ -145,14 +145,17 @@ class Fluent_Data:
 
 
     def alarm_lookup(self, alarms_list:list) -> str:
-        '''lookup alarm code and return alram string for SQL writes'''
+        '''lookup alarm code and return alarm string for SQL writes'''
 
         if len(alarms_list) != 0:
             for reading in alarms_list['alarm-info']:
                 if reading['alarm-type'] != 'fluent-alarm':
-                    alr_text = reading['alarm-text']
-                    alr_ch_name = reading['channel-name']
-                    alr_ch_num = reading['channel-number']
+                    if reading['alarm-id'] == 48:
+                        alr_text = 'Flowswitch (D4) No Flow'
+                    else:
+                        alr_text = reading['alarm-text']
+                        alr_ch_name = reading['channel-name']
+                        alr_ch_num = reading['channel-number']
 
             return f'{alr_ch_name} ({alr_ch_num}) {alr_text}'
 
@@ -166,7 +169,7 @@ class Fluent_Data:
 
 def main():
     FAPI = Fluent_Data()
-    print(FAPI.alarm_lookup(FAPI.get_active_alarms(1608315810)))
+    print(FAPI.get_active_alarms(2104231255))
 
 
 if __name__=='__main__':
