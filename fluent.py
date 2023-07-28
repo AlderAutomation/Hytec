@@ -152,6 +152,8 @@ class Fluent_Data:
                 if reading['alarm-type'] != 'fluent-alarm':
                     if reading['alarm-id'] == 48:
                         alr_text = 'Flowswitch (D4) No Flow'
+                        alr_ch_name = reading['channel-name']
+                        alr_ch_num = reading['channel-number']
                     else:
                         alr_text = reading['alarm-text']
                         alr_ch_name = reading['channel-name']

@@ -98,10 +98,10 @@ def testing_shit():
 
 
 if __name__=='__main__':
-    # atexit.register(exit_notification)
+    atexit.register(exit_notification)
 
-    # main()
-    # restart_program()
+    main()
+    restart_program()
 
 
-    testing_shit()
+    # testing_shit()
