@@ -39,6 +39,8 @@ class Hysql:
 
 
     def installations_data_add_row(self, dataclass: object) -> None:
+        '''Adds new row the the oi4h8_installation_data table'''
+
         dataclass.set_received_datetime_or_posted('posted', self.posted)
 
         table_name = 'myhytec_dotcomdb.oi4h8_installation_data'
@@ -55,12 +57,17 @@ class Hysql:
         thelog.debug(f'SQL_WRITE {self.my_cursor.rowcount} records inserted.')
 
 
-    def alarm_data_add_row(self, dataclass: object) -> None:
+    def alarm_data_add_row(self, alarm_num: int, dataclass: object) -> None:
+        '''Adds row to oi4h8_installation_problem_data'''
+
         dataclass.set_received_datetime_or_posted('posted', self.posted)
 
         table_name = 'myhytec_dotcomdb.oi4h8_installation_problem_data'
         cols = ['installations_installation_id', 'received_datetime', 'alarm_code']
-        values = [dataclass.installation_id, dataclass.received_datetime, dataclass.alarm]
+        if alarm_num == 1:
+            values = [dataclass.installation_id, dataclass.received_datetime, dataclass.alarm1]
+        else:
+            values = [dataclass.installation_id, dataclass.received_datetime, dataclass.alarm2]
 
         columns_str = ', '.join(cols)
         placeholders = ', '.join(['%s'] * len(values))
@@ -73,11 +80,13 @@ class Hysql:
         
 
     def alarm_data_inInstallations_update(self, dataclass: object) -> None:
+        '''Updates the alarm code on the oi4h8_installations table'''
+
         dataclass.set_received_datetime_or_posted('posted', self.posted)
 
         table_name = 'myhytec_dotcomdb.oi4h8_installations'
 
-        query = f"UPDATE {table_name} SET alarm_code = '{dataclass.alarm}' WHERE installation_id = {dataclass.installation_id};"
+        query = f"UPDATE {table_name} SET alarm_code = '{dataclass.alarm1}' WHERE installation_id = {dataclass.installation_id};"
         thelog.debug(f'SQL_FUNC Inserting data into DB using: {query}')
         self.my_cursor.execute(query)
         self.my_db.commit()

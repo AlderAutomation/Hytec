@@ -144,14 +144,16 @@ class Fluent_Data:
         return json_response
 
 
-    def alarm_lookup(self, alarms_list:list) -> str:
+    def alarm_lookup(self, alarms_list:list) -> list:
         '''lookup alarm code and return alarm string for SQL writes'''
+
+        alarms_string_list = []
 
         if len(alarms_list) != 0:
             for reading in alarms_list['alarm-info']:
                 if reading['alarm-type'] != 'fluent-alarm':
                     if reading['alarm-id'] == 48:
-                        alr_text = 'Flowswitch (D4) No Flow'
+                        alr_text = 'No Flow'
                         alr_ch_name = reading['channel-name']
                         alr_ch_num = reading['channel-number']
                     else:
@@ -159,7 +161,8 @@ class Fluent_Data:
                         alr_ch_name = reading['channel-name']
                         alr_ch_num = reading['channel-number']
 
-            return f'{alr_ch_name} ({alr_ch_num}) {alr_text}'
+                alarms_string_list.append(f'{alr_ch_name} ({alr_ch_num}) {alr_text}')
+            return alarms_string_list
 
 
     def set_reading_alarm(self, serial) -> str:
@@ -171,7 +174,7 @@ class Fluent_Data:
 
 def main():
     FAPI = Fluent_Data()
-    print(FAPI.get_active_alarms(2104231255))
+    print(FAPI.get_active_alarms(1903291361))
 
 
 if __name__=='__main__':

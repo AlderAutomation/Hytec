@@ -26,10 +26,13 @@ def write_readings_to_sql(Hysql, FAPI, readings_list: list) -> None:
                     thelog.debug(f'Skipping {reading.ch_num}')
                 elif reading.ch_num == 'R6':
                     reading.set_alarm(FAPI.alarm_lookup(FAPI.get_active_alarms(reading.dev_serial)))
-                    if reading.alarm != None:
-                        Hysql.alarm_data_add_row(reading)
+                    if reading.alarm1 != None:
+                        Hysql.alarm_data_add_row(1, reading)
                         Hysql.alarm_data_inInstallations_update(reading)
-                        thelog.debug(f'Inserted {reading.alarm} into DB problem data')
+                        thelog.debug(f'Inserted {reading.alarm1} into DB problem data')
+                    if reading.alarm2 != None:
+                        Hysql.alarm_data_add_row(2, reading)
+                        thelog.debug(f'Inserted {reading.alarm2} into DB problem data')
                 else:
                     Hysql.installations_data_add_row(reading)
                     Hysql.alarm_data_inInstallations_update(reading)
@@ -77,22 +80,22 @@ def main():
 
 def testing_shit():
     FAPI = Fluent_Data()
-    # hysql = Hysql()
+    hysql = Hysql()
 
     'For doing list of serials'
-    serial_list = FAPI.list_devices()
-    log_serial_list_length(serial_list['controller-list'])
+    # serial_list = FAPI.list_devices()
+    # log_serial_list_length(serial_list['controller-list'])
 
-    for serial in serial_list['controller-list']:
-        print(serial)
+    # for serial in serial_list['controller-list']:
+    #     print(serial)
 
     'Reading single serial number'
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device('1608315810'))
+    readings_list = FAPI.set_reading_obj(FAPI.get_device('2106150627'))
 
     # for reading in readings_list:
     #     print(reading)
 
-    # write_readings_to_sql(hysql, FAPI, readings_list)
+    write_readings_to_sql(hysql, FAPI, readings_list)
     # exit_notification()
 
 
