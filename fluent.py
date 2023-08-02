@@ -5,6 +5,7 @@ import logging
 import datetime
 from time import sleep
 
+
 import reading 
 import config 
 
@@ -18,7 +19,8 @@ thelog.setLevel(config.LOGLEVEL)
 BASE_URL = 'https://api.fluent.walchem.com/'
 HEADERS = {
   'accept': '*/*',
-  'authorization': config.FLUENT_API_KEY
+  'authorization': config.FLUENT_API_KEY,
+  'User-Agent':"HytecAPIAgent"
 }
 
 
@@ -45,14 +47,28 @@ class Fluent_Data:
         return s
 
 
+    def request_retry_with_max_wait_time(self, url:str, max_retries:int = 10, max_wait_seconds:int = 6):
+        for retry_count in range(max_retries):
+            try: 
+                response = self.sess.get(url, headers=HEADERS)
+                response.raise_for_status()
+                return response.json()
+            except (requests.RequestException, ValueError) as e:
+                thelog.error(f'REQUEST_ERROR: {e}')
+                if retry_count == max_retries -1: 
+                    break
+                wait_time = min(2 ** retry_count, max_wait_seconds)
+                sleep(wait_time)
+        return None
+    
+
     def list_devices(self) -> None: 
         '''Use this to get a list of serial number from the Fluent account'''
 
         type_of_req = 'controller/list/'
         self.url = BASE_URL + type_of_req
-        response = self.sess.get(self.url)
-        thelog.debug(f'API_RESPONSE Listing device from {self.url} with a response of {response}')
-        json_response = response.json()
+        json_response = self.request_retry_with_max_wait_time(self.url)
+        thelog.debug(f'API_RESPONSE Listing device from {self.url} with a response of {json_response}')
 
         return json_response
 
@@ -62,9 +78,8 @@ class Fluent_Data:
 
         type_of_req = f'controller/current-readings/{serial}'
         self.url = BASE_URL + type_of_req
-        response = self.sess.get(self.url, headers=HEADERS)
-        thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of {response}')
-        json_response = response.json()
+        json_response = self.request_retry_with_max_wait_time(self.url)
+        thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of test value')
 
         return json_response
 
