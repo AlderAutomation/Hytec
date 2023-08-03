@@ -77,22 +77,23 @@ def main():
     print(f'APP_TIMERS process took {time_took}')
 
 
-def testing_shit():
+def testing_mode():
     FAPI = Fluent_Data()
     hysql = Hysql()
 
     'For doing list of serials'
-    serial_list = FAPI.list_devices()
-    log_serial_list_length(serial_list['controller-list'])
+    # serial_list = FAPI.list_devices()
+    # log_serial_list_length(serial_list['controller-list'])
 
-    for serial in serial_list['controller-list']:
-        print(serial)
+    # for serial in serial_list['controller-list']:
+    #     print(serial)
 
     'Reading single serial number'
-    # readings_list = FAPI.set_reading_obj(FAPI.get_device('1903291361'))
+    readings_list = FAPI.set_reading_obj(FAPI.get_device('2210261161'))
 
-    # for reading in readings_list:
-    #     print(reading)
+    if readings_list:
+        for reading in readings_list:
+            print(reading)
 
     # write_readings_to_sql(hysql, FAPI, readings_list)
     # exit_notification()
@@ -100,10 +101,13 @@ def testing_shit():
 
 
 if __name__=='__main__':
-    # atexit.register(exit_notification)
+    atexit.register(exit_notification)
 
-    # main()
-    # restart_program()
+    main()
+    restart_program()
 
 
-    testing_shit()
+    # testing_shit()
+
+# 2210261161 - nonetype error
+# 1803090435 - good

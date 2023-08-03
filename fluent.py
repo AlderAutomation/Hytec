@@ -47,7 +47,7 @@ class Fluent_Data:
         return s
 
 
-    def request_retry_with_max_wait_time(self, url:str, max_retries:int = 10, max_wait_seconds:int = 6):
+    def request_retry_with_max_wait_time(self, url:str, max_retries:int = 1, max_wait_seconds:int = 6):
         for retry_count in range(max_retries):
             try: 
                 response = self.sess.get(url, headers=HEADERS)
@@ -79,7 +79,7 @@ class Fluent_Data:
         type_of_req = f'controller/current-readings/{serial}'
         self.url = BASE_URL + type_of_req
         json_response = self.request_retry_with_max_wait_time(self.url)
-        thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of test value')
+        thelog.debug(f'DEV_LOOKUP Doing device lookup of {serial} with response of {json_response}')
 
         return json_response
 
@@ -89,7 +89,12 @@ class Fluent_Data:
 
         reading_obj_list = []
 
-        if 'error' in data:
+        if data == None:
+            print("no data")
+
+            return False
+
+        elif 'error' in data:
             print(data)
             thelog.error(f'DEV_UNASSIGNED The device returned error data from api call. Likely due to being unassigned')
             thelog.error(data)
