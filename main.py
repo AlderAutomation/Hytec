@@ -7,6 +7,7 @@ from time import sleep
 import config
 from fluent import Fluent_Data
 from sql import Hysql
+import log_cleaner
 
 
 LOG_FORMAT = '%(levelname)s %(asctime)s - %(message)s'
@@ -46,12 +47,23 @@ def log_serial_list_length(serials: list) -> None:
     thelog.info(f'DEV_SERIAL_COUNT There are {len(serials)} serials in this run')
 
 
+def exit_process() -> None:
+    exit_notification()
+    on_exit_log_cleanup()
+
+
+def on_exit_log_cleanup() -> None:
+    lc = log_cleaner.Log_Cleaner()
+    lc.populate_log_files()
+    lc.compare_remove_older_logs()
+
+
 def exit_notification() -> None: 
     '''On exit function to notify that the system is down'''
-    script_path = './slack_notification.sh'
-    arg_text = 'HYTEC_API_HAS_STOPPED_RUNNING_oh_noes'
+    script_path = './teams_notification.sh'
+    arg_text = 'HYTEC_API_MAY_HAVE_STOPPED_RUNNING.PLEASE_CHECK'
 
-    subprocess.call(f'/bin/bash {script_path} {arg_text} {config.SLACKURL}', shell=True)
+    subprocess.call(f'/bin/bash {script_path} {arg_text} {config.TEAMSURL}', shell=True)
 
 def restart_program():
     python = sys.executable
@@ -103,12 +115,12 @@ def testing_mode():
 
 
 if __name__=='__main__':
-    # atexit.register(exit_notification)
+    atexit.register(exit_process)
 
-    # main()
-    # restart_program()
+    main()
+    restart_program()
 
-    testing_mode()
+    # testing_mode()
 
 # 2210261161 - nonetype error
 # 1803090435 - good
