@@ -2,6 +2,7 @@ import datetime
 import logging
 import atexit
 import sys, os, subprocess
+from time import sleep
 
 import config
 from fluent import Fluent_Data
@@ -70,6 +71,7 @@ def main():
     for serial in serial_list['controller-list']:
         readings_list = FAPI.set_reading_obj(FAPI.get_device(serial))
         write_readings_to_sql(hysql, FAPI, readings_list)
+        sleep(3)
 
     end = datetime.datetime.now()
     time_took = end - start
@@ -89,25 +91,25 @@ def testing_mode():
     #     print(serial)
 
     'Reading single serial number'
-    readings_list = FAPI.set_reading_obj(FAPI.get_device('2210261161'))
+    readings_list = FAPI.set_reading_obj(FAPI.get_device('1908160625'))
 
     if readings_list:
         for reading in readings_list:
             print(reading)
 
-    # write_readings_to_sql(hysql, FAPI, readings_list)
+    write_readings_to_sql(hysql, FAPI, readings_list)
     # exit_notification()
 
 
 
 if __name__=='__main__':
-    atexit.register(exit_notification)
+    # atexit.register(exit_notification)
 
-    main()
-    restart_program()
+    # main()
+    # restart_program()
 
-
-    # testing_shit()
+    testing_mode()
 
 # 2210261161 - nonetype error
 # 1803090435 - good
+# 1705301234 - No Serial in DB
