@@ -19,7 +19,7 @@ class Hysql:
         self.my_db = mysql.connector.connect(
             host=config.SQLIP,
             port=config.PORT,
-            user=config.SQLUSER,
+            user=config.SQLUSER, 
             password=config.SQLPWD
         )
 

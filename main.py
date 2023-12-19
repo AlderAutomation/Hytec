@@ -121,7 +121,3 @@ if __name__=='__main__':
     restart_program()
 
     # testing_mode()
-
-# 2210261161 - nonetype error
-# 1803090435 - good
-# 1705301234 - No Serial in DB
