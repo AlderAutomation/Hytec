@@ -60,7 +60,7 @@ def on_exit_log_cleanup() -> None:
 
 def exit_notification() -> None: 
     '''On exit function to notify that the system is down'''
-    script_path = './teams_notification.sh'
+    script_path = './teams_notification_wget.sh'
     arg_text = 'HYTEC_API_MAY_HAVE_STOPPED_RUNNING.PLEASE_CHECK'
 
     subprocess.call(f'/bin/bash {script_path} {arg_text} {config.TEAMSURL}', shell=True)
